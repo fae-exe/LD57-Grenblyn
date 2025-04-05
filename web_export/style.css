@@ -3,7 +3,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: lighter;
-    background: white;
+    background: rgb(188,172,139);
     overflow: hidden;
 }
 
@@ -56,7 +56,7 @@ h2 {
     position: fixed;
     display: block;
     width: 100%;
-    background: white;
+    background: rgb(188,172,139);
     margin: 0;
     padding-top: 6px;
     padding-bottom: 6px;
