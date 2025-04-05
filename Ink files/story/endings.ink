@@ -1,6 +1,6 @@
 === Outside_World
 
-- I stepped outside - for the first time since I was a child.
+- I stepped outside - for the first time since I was a child. # AUDIOLOOP: Sounds/ending1.mp3 # IMAGE: Images/grandma_cliff_ending.PNG
 
 * [I felt relieved.]
     I felt a wave of relief - the weight of the depths finally lifted from my shoulders.
