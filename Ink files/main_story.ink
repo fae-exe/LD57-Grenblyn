@@ -1,15 +1,29 @@
 
+INCLUDE beginning.ink
+
+
+// SET TO FALSE WHEN MAKING THE WEB EXPORT
+
+VAR debug = true
+
 // <br> = line break
 // &nbsp; = non-breaking space
 
 # IMAGE: Images/Grandma1.PNG
 # AUDIOLOOP: Sounds/loop2.mp3
 
+{debug: -> Debug}
+
 - -> Intro
 
+=== Debug
+
+* Go to "Outside_World"
+    -> Outside_World
+* Go to "Chrys_Test"
+    -> Chrys_Test
+
 === Intro
-
-
 
 -> Outside_World
 
@@ -53,7 +67,7 @@
     ** [I am sure of it.]
         Of this, I am quite certain, although I have no proofs.
     ** [We must not forget our guilt.]
-        We must never forget our guilt, and strive to make amends with the world.
+        We must never forget ou                         r guilt, and strive to make amends with the world.
     ** [The goddesses are angry.]
         The goddesses are angry at our kind - and I will strive to earn their forgiveness.
         +++ [Write on \-\>]
