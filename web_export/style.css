@@ -5,6 +5,9 @@ body {
     font-weight: lighter;
     background: rgb(188,172,139);
     overflow: hidden;
+    background-image: url("Images/desk_background.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -35,8 +38,9 @@ h2 {
 }
 
 .header {
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    color: blue;
 }
 
 /*
@@ -85,7 +89,7 @@ h2 {
     width: 100%;
     top: 0;
     left: 0;
-    margin-top: 24px;
+    margin-top: 0px;  /* parameter I set to zero for parchment to be stuck on top */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -101,10 +105,13 @@ h2 {
 .container {
     display: block;
     max-width: 600px;
+    padding: 26px;
+    padding-top: 10px;
+    top: 0 auto;
     margin: 0 auto;
-    padding: 20px;
-    padding-top: 4em;
-    background: white;
+    background-image: url("Images/parchment_background.PNG");
+    background-size: cover;
+    background-color: transparent;;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -113,22 +120,30 @@ h2 {
     }
 }
 
+/* Import some font */
+@font-face {
+  font-family: best-font;
+  src: url(Font_another/Another_.ttf);
+}
+
 p {
-    font-size: 13pt;
-    color: #888;
-    line-height: 1.7em;
-    font-weight: lighter;
+    font-size: 22px;
+    color: #441b08;
+    line-height: 1em;
+    font-family: sans-serif;
 }
 
 a {
-    font-weight: 700;
+    font-weight: 600;
     color: #b97c2c;
+    font-size: 22px;
+    line-height: 1em;
     font-family: sans-serif;
     text-decoration: none;
 }
 
 .unclickable {
-    font-weight: 700;
+    font-weight: 600;
     color: #4f3411;
     font-family: sans-serif;
     text-decoration: none;
@@ -136,7 +151,7 @@ a {
 }
 
 a:hover {
-    color: black;
+    color: #441b08;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -184,14 +199,14 @@ img {
 */
 .choice {
     text-align: center;
-    line-height: 1.7em;
+    line-height: 1em;
 }
 
 /* 
   Class applied to first choice
 */
 :not(.choice)+.choice {
-    padding-top: 1em;
+    padding-top: 1.2em;
 }
 
 /*
@@ -215,14 +230,14 @@ img {
 
 #controls {
     z-index: 4;
-    font-size: 9pt;
+    font-family: sans-serif;
     text-align: center;
     padding-bottom: 6px;
     position: fixed;
     right: 14px;
     top: 4px;
     user-select: none;
-    background: white;
+    background-color: transparent;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -232,7 +247,7 @@ img {
 }
 
 #controls [disabled] {
-    color: #ccc;
+    color: gray;
 }
 
 #controls>*:not(:last-child):after {
@@ -254,33 +269,30 @@ img {
     # theme: dark
 */
 
-body.dark {
-    background: black;
-    color: white;
-}
-
 .dark h2 {
     color: #666;
 }
 
 .dark .container {
-    background: black;
+    /* nothing here sorry lol */
 }
 
 .dark .written-in-ink {
     background: black;
 }
 
+.dark p {
+    font-family: best-font;
+}
+
 .dark a {
+    font-family: best-font;
     color: #cc8f1a;
 }
+
 .dark .unclickable{
     color: #c4af87;
     cursor:not-allowed;
-}
-
-.dark a:hover {
-    color: white;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -302,5 +314,5 @@ body.dark {
 }
 
 .dark #controls {
-    background: black;
+    font-family: best-font;
 }
