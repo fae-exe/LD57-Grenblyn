@@ -12,6 +12,7 @@ INCLUDE story\colony.ink
 INCLUDE story\endings.ink
 INCLUDE story\elevator.ink
 INCLUDE story\echoing_cave.ink
+INCLUDE story\lost_child.ink
 
 INCLUDE chrys_debug.ink
 

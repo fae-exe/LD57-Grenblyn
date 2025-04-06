@@ -5,3 +5,6 @@
     -> Colony // this redirects to the colony
 * [Skip to the echoing caves.]
     -> Echoing_Caves
+* [Skip to the meeting with Gwen.]
+    -> Lost_Child
+    
