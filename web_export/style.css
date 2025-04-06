@@ -255,8 +255,8 @@ img {
 */
 
 body.dark {
-    background: black;
-    color: white;
+    background-image: url("Images/desk_background.PNG");
+    background-size: cover;
 }
 
 .dark h2 {
@@ -264,7 +264,9 @@ body.dark {
 }
 
 .dark .container {
-    background: black;
+    background-image: url("Images/parchment_background.PNG");
+    background-size: cover;
+    background-color: transparent;
 }
 
 .dark .written-in-ink {
