@@ -27,29 +27,29 @@ She said she has been waiting for us but now that we were here we could join her
 *[{w_on}]
 - It was hard to define where the voice came from.
 *[{We_I(2)} went left]
-A dead end.
+Another tunnel entry.
 *[{We_I(2)} went right]
 Another tunnel entry.
 *[{We_I(2)} went straight ahead]
-A three ways crossroad.
+Another tunnel entry.
 
 -
 *[{w_on}]
 - The voice kept escaping as {We_I(1)} tried to follow it.
 *[{We_I(2)} went left]
-A dead end.
+An empty cave hall.
 *[{We_I(2)} went right]
-Another tunnel entry.
+An empty cave hall.
 *[{We_I(2)} went straight ahead]
-A three ways crossroad.
+An empty cave hall.
 
 -
 *[{w_on}]
-- It kept echoing on the cave walls uninterruptly.
+- It kept echoing on the walls uninterruptly.
 *[{We_I(2)} went left]
-A dead end.
+A three ways crossroad.
 *[{We_I(2)} went right]
-Another tunnel entry.
+A three ways crossroad.
 *[{We_I(2)} went straight ahead]
 A three ways crossroad.
 
@@ -59,12 +59,19 @@ A three ways crossroad.
 *[{We_I(2)} went left]
 A dead end.
 *[{We_I(2)} went right]
-Another tunnel entry.
+A dead end.
 *[{We_I(2)} went straight ahead]
-A three ways crossroad.
+A dead end.
+
+- 
+*[{w_on}]
+- We should get out, there's nobody here.
+
+*[The exit disapeared.]
+*[The voice grew louder.]
+*[We left by where we came in.]
 
 -
-
 
 
 
