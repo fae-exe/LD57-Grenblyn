@@ -1,27 +1,128 @@
-=== Colony === // You can name this however you want
+=== Colony ===
 
-- I was still walking along those familiar tunnels when I recollected my thoughts.
+- Blood was running down my face and my head spun, as my heart beat so hard I felt it within my teeth. # Sounds/loop2.mp3 # Images/cavemouth_dark.PNG
+
+LIST KS_Survivors = Slaughtered, Dismembered, BonesEaten // this is to track the player knowledge of the other survivors' fate
+LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins
+LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSomeoneEscaped
+
+* [I was shaken.]
+    They had been slaughtered - never had a chance. My hands shook uncontrollably. {alter(fear, 1)} {alter(nauseous, 1)} {alter (despair, 1)}
+    ~ KS_Survivors = Slaughtered
+* [I was exhausted.]
+    Exhausted as I was, every step was more difficult than the last. {alter(old, 1)}
+* (colony_nails_in_palm) [I was determined.]
+    My hand curled into a fist as my nails dug into my palm. {alter(fierce, 1)}
+
+-
+* [{w_on}]
+
+- Dark stone bowels surrounded me, lit by the orange glow of forgelamps; the comforting chirps of cricket-beacons every thirty meters or just about.
 
 - (top)
-+ [{d_on}]
+
+
++ [{l_on}]
 {stopping:
-    - But I was not in the residential districts anymore. -> top
-    - It was way too painfull for me to stay there, and too dangerous anyway. -> top
-    - I had to keep going forward, until making it out of the colony ruins. 
+    - These were familiar tunnels - rising towards the city from the corewards realms. What we'd call the city, anyways; our haven, our refuge. {alter (hope, 2)}
+        ~ KS_Tunnels += Familiar
+        ~ KS_Tunnels += CorewardsRealms
+        ~ KS_Tunnels += LeadsToCity
+        -> top
+    - These names that we used not to call it a survivor camp. -> top
+    - Or a tomb. {alter (despair, 1)} {alter (hope, -1)} -> top
+    - I had to cross through the ruins, no matter what - this was the only way out. {alter (fierce, 1)}
+        ~ KS_Tunnels += CityInRuins
 }
+    ** [{w_on}]
 * [{m_on}]
 
--
+- Walking through these {KS_Tunnels ? Familiar:paths, that I'd dug with my own two hands,{learn(KS_Tunnels, DugThemMyself)}|familiar tunnels {learn(KS_Tunnels, Familiar)}} helped me collect my thoughts.
 
-*[about the tunnels]
-I opened these paths myself, most of them I carved with my utmost determination to improve our quality of life.
-*[about my life]
-I had grown up there, and I chose to be a path carver.
-*[about my people]
-I must face it now, I've lost my people.
+* {KS_Tunnels !? DugThemMyself} [I rubbed the calluses on my hand.]
+    I rubbed the calluses on my hands, absentmindedly, thinking back to how I had opened these tunnels myself, so many years ago. {alter (hope, 1)}
+    ~ KS_Tunnels += DugThemMyself
+    ** [{w_on}]
+    This was the life I'd chosen. <>
+    -- (colony_life_id_chosen)
+        Digger, carver, path-maker; so that others could follow in my footsteps. 
+        ~ KS_Tunnels += PathCarver
+* {KS_Tunnels ? DugThemMyself} [That fire still burned within me.]
+    That fire still burned within me. This was the life I'd chosen, so many years ago. {alter (fierce, 1)}
+        ** [{w_on}] -> colony_life_id_chosen
+* (horrible_sight) [I could not shake the horrible sights.]
+    {
+        - KS_Survivors ? Slaughtered: The dismembered, disfigured bodies. The sea of blood. I could not escape the sight of my dead comrades. Nor the memories of the smell. {alter(fear, 1)} {alter(nauseous, 1)}
+            ~ KS_Survivors += Dismembered
+        - KS_Survivors !? Slaughtered: I could not shake the sight of how my comrades had been slaughtered in the {KS_Tunnels !? CorewardsRealms:corewards realms{learn(KS_Tunnels, CorewardsRealms)}|abyss} - it made me lightheaded. {learn(KS_Survivors, Slaughtered)} {alter(fear, 1)} {alter(nauseous, 1)}
+    }
+* [I dreaded to come back.]
+    {
+        - KS_Tunnels !? LeadsToCity: These tunnels lead to what we once called the city - now reduced to rubbles and memories. {learn (KS_Tunnels, LeadsToCity)} {learn(KS_Tunnels, CityInRuins)}
+        - KS_Tunnels ? LeadsToCity: Seeing what had become of the once vibrant city always broke my heart. Greatness reduced to rubbles.
+    }
+    
+    {alter (despair, 1)} {alter (hope, -1)}
+- 
+
+* [{w_on}]
+
+- I emerged from the maw of the deep; the cavern was immense, tens of meters high, metal towers grafted to the walls, rows of pipes and purifiers, and at the center of it all - the quarry.
+
+* [This was still my home.]
+    {KS_Tunnels ? CityInRuins:Even in its current state, abandonned, broken - all I could see was my home.|I stared at the ruins, the broken husk of the city - and I still saw my home. {learn(KS_Tunnels, CityInRuins)}} {alter (nostalgia, 1)} {alter (hope, 1)} {alter (fear, -1)}
+    ** [A place that I loved.]
+        A place that we used to love with all our hearts. Where we felt safe. Happy, even, sometimes. {alter (nostalgia,1)} {alter (hope, 1)}
+    ** [A place I'd have given everything to protect.]
+        A place we'd have given everything to protect. A place they gave everything to protect, while I am here and I still breathe. {alter (fierce, 1)} {alter (despair, 1)} {alter (guilt, 1)}
+    ** [A place they'd never see again.]
+        -- (colony_never_see_again)
+        {
+            - KS_Survivors !? Slaughtered: A place that my comrades, slaughtered as they were in the {KS_Tunnels !? CorewardsRealms:corewards realms{learn(KS_Tunnels, CorewardsRealms)}|uncaring depths}, would never see again. {alter (despair, 1)} {alter (hope, -1)} {learn (KS_Survivors, Slaughtered)}
+            - KS_Survivors !? Dismembered && KS_Survivors ? Slaughtered: A place that my comrades' grossly mutilated corpses would never return to. The smell and the sight haunt me even now. {alter (nauseous, 1)} {alter (despair, 1)} {learn (KS_Survivors, Dismembered)}
+            - KS_Survivors ? Dismembered: In the {KS_Tunnels !? CorewardsRealms:corewards realms{learn(KS_Tunnels, CorewardsRealms)}|distant abyss} - the fiends had broken their bones and sucked the marrow from them; torn their hearts out to be crushed underfoot. They'd never see their home again. {learn(KS_Survivors, BonesEaten)} {alter (nauseous, 2)} {alter (fierce, 1)}
+            {dead_friends_content_done == false: -> Dead_Friends ->}
+        }
+* {despair >= 2} [I had lost everything.]
+    I had lost my kin, my friends, my sisters-in-arms, my pupils. Everyone I'd sworn to serve and protect. {alter (despair, 1)} {alter (guilt, 2)}
+* {KS_Tunnels ? LeadsToCity && seen_very_recently (-> horrible_sight)} [They'd never see the city again.]
+    The city. <> -> colony_never_see_again
+
+- I looked around at the empty habitations, at the bloodstains and the torn metal sheets, trying to imagine that there was a next step.
+
+* [No more residential districts.]
+    The residential districts had been emptied of their inhabitants. Whether it was the result of an evacuation plan or they had been taken by the fiends, I could not say.
+    ** {despair >= 3} [But little doubt subsisted.]
+        Little doubt subsisted in my mind that they had been taken by the beasts and met a fate worse than death. {alter (despair, 1)} {alter (cold, 2)}
+    ** {hope < 3} [There had to be a chance.]
+        There had to be a chance that some of them could escape. We had trained too much, worked too hard. Survival was drilled into our souls. {alter (hope, 1)} {alter (fierce, 1)} {alter (despair, -1)}
+        ~ PlayerStates += HopesSomeoneSurvived
+    ** {hope >= 3} [I knew some of them escaped.]
+        I knew some of them escaped. I looked up, at one of our secret hatches - and sure enough. The ladder had been jetisonned, but I could see the hatch had been opened recently.
+        ~ PlayerStates += KnowsSomeoneEscaped
+        ~ PlayerStates += HopesSomeoneSurvived
+        *** [I smiled with pride.]
+            I smiled with pride. This gave me joy, and comfort. I had installed that hatch myself. Harder to kill than cockroaches, we were. {alter (hope, 2)} {alter (fear, -2)} {alter (guilt, -2)}
+        *** [I sighed in relief.]
+            I sighed in relief. Finally, life; hope; something to hang onto. If they were holding on, so would I. {alter (fierce, 2)} {alter (hope, 1)} {alter (despair, -2)}
+        *** [I nodded in approval.]
+            I nodded in approval. I had prepared them as much as I could. I would meet them on the other side. {alter (fierce, 1)} {alter (hope, 1)} {alter (fear, -2)} {alter (despair, -2)}
+    ** [I dared not think about it for long.]
+        I dared not think about it for too long. Time was short and I did not want my conclusions to drive me further from hope. What mattered right now was my own survival. {alter (cold, 2)}
+* [The memories were too painful.]
+    It was much too painful to linger here for long. Everywhere I looked were the traces of a life, forever gone.
+    ** [Memories of my childhood bubbled up.]
+    ** [Time was running out.]
+    ** [My thoughts turned to Mariana.]
+        Before I could stop myself, my thoughts turned to Mariana.
+* [I had to keep moving.]
+    I had to keep going forward, until making it out of the colony ruins. 
+
+LIST KS_Mariana = ExWife
+LIST KS_Childhood = FirstExode
 
 -
-+ [{w_on}]
+* [{w_on}]
 
 - I was loosing my footing so easily in this place.
 *[a little bit of poetry]
@@ -78,6 +179,44 @@ The main building was still standing, but the usual racket around it had died do
 The ancillary dwelling, public conveniences, and municipal sculptures that had been erected here by skilled craftswomen were all reduced to dust, eroded, trampled down. -> City_Ruins
 *[the playground]
 Seeing the empty, dilapidated children's playground chilled my blood whilst it drew me to it. -> Playground
+
+=== Dead_Friends
+
+VAR dead_friends_content_done = false
+VAR vomited = 0
+- (top) 
++ [{l_on}]
+    {stopping:
+        - Their skin had been flayed, pierced, plastered over the rocks. It was burnt from the acid sprays; and emitted an acrid smell that had brought tears to my eyes and stung my throat. {alter (nauseous, 2)} {alter (fear, 1)} -> top
+        - Their entrails had been laid in a mound in the center of the small cave where I discovered them, in a crude pit dug by the creatures. There was so much intentionality to the act, so much cruelty. {alter (nauseous, 2)} {alter (fear, 1)} -> top
+        - At this moment, I doubled over, retching, wracked with full body spasms. Vomit spewed forth violently, burning the inside of my mouth, spilling on the rocks at my feet and flowing onto my chin. {alter (nauseous, -4)} {alter (vomited, 1)}
+        ~ dead_friends_content_done = true
+        ~ PlayerStates += VomitOnFace
+    }
+    ** [{w_on}]
+    I took a moment, falling to my knees, to breathe deeply and center myself as much as I could.
+        *** {hope >= 1} [I would not meet the same fate.]
+            I would not meet the same fate. And I knew others had survived as well - I knew it, I hoped, I longed for it. {alter (hope, 3)} {alter (fear, -1)} {alter (despair, -3)}
+            ~ PlayerStates += HopesSomeoneSurvived
+        *** {fierce >= 2} [I would no longer fear.]
+            I steeled myself, clenched my jaw, ground my teeth, my fingernails {Colony.colony_nails_in_palm: digging into my palms once again|digging into my palm} - leaving deep, red marks and a lingering pain. {alter (fierce, 3)} {alter (fear, -3)} {alter (despair, -3)}
+            **** [{w_on}]
+                Fear would not govern me. The creatures would not make me cower. If I died, I would die standing - and so I stood.
+        *** [I shut my heart close.]
+            Something broke inside of me. My ears started ringing, my vision went blurry for a moment; then I felt far away from my own self, from my own mind.
+            **** [{w_on}]
+                When I stood back up, I felt an eery sense of calm. I did not care anymore. {alter(cold, 3)} {alter (guilt, -2)}
+        *** [But I could not get a grip.]
+            But I could not get a grip. I was trembling. Tears started flowing uncontrollably. I don't know how long I spent there. I curled myself into a ball, and wept. {alter (despair, 3)} {alter (hope, -3)} {alter (fierce, -3)}
+            **** [{w_on}]
+            When I finally managed to stand up, I felt exhausted. My entire body was hurting. I had never felt so old and broken. {alter (old, 2)}
+    --
+    ** [{w_on}]
++ [Stop. I needed to stop thinking about it.]
+    I needed to perish this line of thought now. Now was not the time to break down.
+    * [{w_on}]
+
+- ->->
 
 === Workplace
 
