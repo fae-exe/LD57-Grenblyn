@@ -8,13 +8,13 @@ Available character variables:
 hope, fierce, despair, old
 */
 
-INCLUDE beginning.ink
-
-
+INCLUDE story\colony.ink
 INCLUDE story\endings.ink
 INCLUDE story\elevator.ink
+INCLUDE story\echoing_cave.ink
+INCLUDE story\lost_child.ink
 
-
+INCLUDE chrys_debug.ink
 
 // <br> = line break
 // &nbsp; = non-breaking space
@@ -26,7 +26,7 @@ INCLUDE story\elevator.ink
 
 // SET TO FALSE WHEN MAKING THE WEB EXPORT
 
-VAR debug = false
+VAR debug = true
 
 {debug: -> Debug}
 
