@@ -36,7 +36,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
     - I had to cross through the ruins, no matter what - this was the only way out. {alter (fierce, 1)}
         ~ KS_Tunnels += CityInRuins
 }
-    ** [{w_on}]
+    -> Parchment_Button (w_on) ->
 * [{m_on}]
 
 - Walking through these {KS_Tunnels ? Familiar:paths, that I'd dug with my own two hands,{learn(KS_Tunnels, DugThemMyself)}|familiar tunnels {learn(KS_Tunnels, Familiar)}} helped me collect my thoughts.
@@ -51,7 +51,8 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
         ~ KS_Tunnels += PathCarver
 * {KS_Tunnels ? DugThemMyself} [That fire still burned within me.]
     That fire still burned within me. This was the life I'd chosen, so many years ago. {alter (fierce, 1)}
-        ** [{w_on}] -> colony_life_id_chosen
+        -> Parchment_Button (w_on) -> 
+        -> colony_life_id_chosen
 * (horrible_sight) [I could not shake the horrible sights.]
     {
         - KS_Survivors ? Slaughtered: The dismembered, disfigured bodies. The sea of blood. I could not escape the sight of my dead comrades. Nor the memories of the smell. {alter(fear, 1)} {alter(nauseous, 1)}
@@ -67,7 +68,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
     {alter (despair, 1)} {alter (hope, -1)}
 - 
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - I emerged from the maw of the deep; the cavern was immense, tens of meters high, metal towers grafted to the walls, rows of pipes and purifiers, and at the center of it all - the quarry. # IMAGE: Images/quarry.PNG
 
@@ -91,7 +92,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
     The city. <> -> colony_never_see_again
 
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - I looked around at the empty habitations, at the bloodstains and the torn metal sheets, trying to imagine that there was a next step.
 
@@ -138,20 +139,20 @@ LIST KS_Mariana = ExWife
 LIST KS_Childhood = FirstExode
 
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - The ground was covered in cracks, gears, chain belts, tools and spilled lubricant. It was so easy to lose your footing, every step of the way.
 *[{w_on_dark}]
     Thoughts kept leaking from my head - my skull an old sieve; straining the water, retaining only silt. Anxiety sprayed the city walls with long-gone shadows. {alter (despair, 2)}
-    ** [{w_on}]
+    -> Parchment_Button (w_on) ->
     -- My breathing grew labored as they circled around me, closing in - suffocating.
-    ** [{w_on}]
+    -> Parchment_Button (w_on) ->
     -- Every shadow a corpse, in the theater of my mind. Everything, in that haze, was a source of apprehension.
     ** [The horror hunting me.]
         I thought, at the time, that one of the horrors was on my trail - hungry for my blood, specifically.
         *** [I had killed their own.]
         I was not a lamb to be slaughtered. And when the rocks gave way to flesh - I had no qualms to keep carving. 
-        **** [{w_on}]
+        -> Parchment_Button (w_on) ->
         ---- (colony_killed_their_own) Of the horrors we had slain - many died by my hand. {alter (fierce, 2)} {alter (despair, -1)} {alter (fear, -2)}
             ~ PlayerStates += KilledHorrors
         *** [I had escaped their grasp.]
@@ -160,22 +161,22 @@ LIST KS_Childhood = FirstExode
                 And that they were looking for me.
         *** [They bore a grudge.]
             I had been a leader to my people. I was one of the elder of the city, and I had trained most of our path carvers myself.
-            **** [{w_on}]
+            -> Parchment_Button (w_on) ->
             -> colony_killed_their_own
         --- 
-        *** [{w_on}]
+        -> Parchment_Button (w_on) ->
         --- Being personally hunted, by a creature capable of boundless cruelty.
         
     ** [My own death.]
         Scenes of my own death, of my parents' death, echoed on the stone walls as if to torment me. {alter (fear, 2)}
 *[{d_on_surroundings}]
-    I had played, decades ago, in these streets. It was surprisingly warm down here, with all the dredgers, the smelters, the furnaces. {alter(nostalgia, 1)} {alter (despair, -1)}
+    I had played, decades ago, in these streets. It had always been comfortingly warm down here, with all the dredgers, the smelters, the furnaces. {alter(nostalgia, 1)} {alter (despair, -1)}
     ** [A peaceful life.]
     ** [A time long gone.]
     ** [I would rather forget.]
     In that moment, as thoughts of my childhood, of simpler times before the crawling horrors would come 
     --
-    ** [{w_on}]
+    -> Parchment_Button (w_on) ->
     -- I was descending, towards the city center. I needed to make my way to the condemned tunnels. {alter (hope, 1)}
     ** [Towards the surface.]
         The ones that lead up - to the surface world. <> -> no_one_knew
@@ -192,7 +193,7 @@ LIST KS_Childhood = FirstExode
         We had no choice. Without the resources, without the materials, the space it afforded us, the food we discovered - we would have been long dead. {alter (guilt, -2)}
     ** [Was it our fault?]
         Maybe, if we hadn't dugged as far... If we hadn't used the dredgers and all the other machines...
-        *** [{w_on}]
+        -> Parchment_Button (w_on) ->
             Maybe the horrors wouldn't have found us. {KS_Survivors !? Slaughtered: Maybe my comrades wouldn't have been slaughtered as they were. {learn (KS_Survivors, Slaughtered)}} {alter (guilt, 2)} {alter (despair, 1)}
         *** [{m_on}]
             No matter. What is done is done, and there is no way to know for certain. {alter (guilt, -1)} {alter (cold, 2)}
@@ -201,7 +202,7 @@ LIST KS_Childhood = FirstExode
     *** [{w_on}]
         And if that was the case - I was not going to run from it. {alter (fierce, 2)} {alter (despair, -1)} {alter (guilt, -1)}
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - My weary mind drifted away as I walked; my legs tired, my feet in pain. 
 
@@ -209,7 +210,7 @@ LIST KS_Childhood = FirstExode
 Before the crawling horror came, when the water was still flowing through the cracks of our caves, life was pretty peacefull.{alter (nostalgia, 1)}
 
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - The creeping thought of that beast never-ending hunt for me just wouldn't leave my head.
 
@@ -224,7 +225,7 @@ I was hoping that the varicose veins in my right leg and my swollen feet wouldn'
 I was worried this used heart of mine would have trouble keeping up the pace.
 
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - I concentrated on lifting my head up and looking at my surroundings.
 *[my workplace]
@@ -252,15 +253,15 @@ It was hard to have faith - to truly believe that going outside would save us no
 
     ** [But what had we done?]
         But what had we done to deserve such a fate? What had the children done, what had the priestesses done?
-        *** [{w_on}]
+        -> Parchment_Button (w_on) ->
         --- Would our sins be so terrible that we should be extinguished?
         *** [I could not accept it.]
             I could not accept it. If this was truly what they wanted, I would fight against it until the earth itself split open and devoured me. {alter (fierce, 2)}
         *** [Perhaps - if that was their will.]
             Perhaps. If that was the will of the goddesses, so it would be. But that was out of my hands entirely.
-            **** [{w_on}]
+            -> Parchment_Button (w_on) ->
             ---- So I would do the only thing I could - and fight for my survival. 
-            **** [{w_on}]
+            -> Parchment_Button (w_on) ->
             ---- And that meant trying my luck with the surface world. In a way, I thought there still was a chance for us. For me.
             -> curiosity_still_was_a_chance
         *** [No matter.]
@@ -268,9 +269,9 @@ It was hard to have faith - to truly believe that going outside would save us no
     ** [I had been pious.]
         I had been pious - I thought. If my fate was in their divine hands, what could I do but follow my path, as I'd always done? {alter (hope, 2)} {alter (despair, -2)}
         ~ PlayerStates += Pious
-        *** [{w_on}]
+        -> Parchment_Button (w_on) ->
         --- It was hard to have faith - but I still found the strength within myself to believe.
-        *** [{w_on}]
+        -> Parchment_Button (w_on) ->
         --- In that moment, I had nothing else to turn to - and these thoughts brought me relief amidst the darkness and the ruins.
 * [What was I even thinking, "we"?]
     What was I even thinking, "we"? There was no "we" anymore - I was all alone. {PlayerStates ? KnowsSomeoneEscaped: At least, until I found one of the survivors.|{PlayerStates ? HopesSomeoneSurvived: I could only hoped someone had survived|And as far as I knew, I was the last}}.
@@ -293,20 +294,20 @@ It was hard to have faith - to truly believe that going outside would save us no
                 -> Heard_Screams
         *** {despair < 7} [The tears started to flow.]
             The tears started to flow, and they just would not stop. # IMAGE: Images/grandma_sad.PNG
-            **** [{w_on}]
-                I leaned on a giant machine for a moment, catching my breath, looking in the distance, at the quarry and the houses. {alter (despair, -1)}
-                ***** [{w_on}]
-                    -> Heard_Screams
+            -> Parchment_Button (w_on) ->
+            I leaned on a giant machine for a moment, catching my breath, looking in the distance, at the quarry and the houses. {alter (despair, -1)}
+            -> Parchment_Button (w_on) ->
+            -> Heard_Screams
         *** {fierce > 4} [I fought the tears.]
             I fought the tears with all I had. I refused to give up, I refused to cry, I refused. I refused these thoughts.
-            **** [{w_on}]
-                We were not doomed, and as long as I breathed, it would not be the end.
-                ***** [I punched the cave wall.]
+            -> Parchment_Button (w_on) ->
+            ---- We were not doomed, and as long as I breathed, it would not be the end.
+            **** [I punched the cave wall.]
                     I punched the cave wall. Very hard. I injured my hand - scraped my knuckles, maybe even cracked my wrist.
                     {alter (despair, -2)} {alter (fierce, 1)} {alter (old, 2)}
                     ~ PlayerStates += HurtHand
-                ***** [I bit my sleeve.]
-                    I bit on my sleeve as hard as I could just to relieve some tension. I let out a muffled scream. It felt good. {alter (despair, -3)} {alter (fierce, 2)}
+            **** [I bit my sleeve.]
+                    I bit on my sleeve as hard as I could just to relieve some tension. I let out a muffled scream. {alter (despair, -3)} {alter (fierce, 2)}
     ** [Damn it all.]
         Damn it all, I thought - we would still burn. If it was not today, it was NOT today. I refused fate. And I refused death. {alter (despair, -3)} {alter (fierce, 2)} {alter (cold, 2)}
         *** [{w_on}]
@@ -342,23 +343,23 @@ That was when I heard the screams.
 * [These unholy screams.]
 */
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - I hurried my step - speeding through the ruins, past the old playground.
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - Past the honored quarry, where I used to work, and the now desert town center.
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - Until I reached the town's exit, towards the echoing caverns and the old galleries.
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - The barricades had been dismantled, the big metal bulkhead forced open; it was the way back to the surface.
 
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
 - It was also uncharted territory for me. Not since the first exode.
 
@@ -377,23 +378,23 @@ VAR vomited = 0
         ~ dead_friends_content_done = true
         ~ PlayerStates += VomitOnFace
     }
-    ** [{w_on}]
+    -> Parchment_Button (w_on) ->
     I took a moment, falling to my knees, to breathe deeply and center myself as much as I could.
-        *** {hope >= 1} [I would not meet the same fate.]
+    ** {hope >= 1} [I would not meet the same fate.]
             I would not meet the same fate. And I knew others had survived as well - I knew it, I hoped, I longed for it. {alter (hope, 3)} {alter (fear, -1)} {alter (despair, -3)}
             ~ PlayerStates += HopesSomeoneSurvived
-        *** {fierce >= 2} [I would no longer fear.]
-            I steeled myself, clenched my jaw, ground my teeth, my fingernails {Colony.colony_nails_in_palm: digging into my palms once again|digging into my palm} - leaving deep, red marks and a lingering pain. {alter (fierce, 3)} {alter (fear, -3)} {alter (despair, -3)}
-            **** [{w_on}]
-                Fear would not govern me. The creatures would not make me cower. If I died, I would die standing - and so I stood.
-        *** [I shut my heart close.]
-            Something broke inside of me. My ears started ringing, my vision went blurry for a moment; then I felt far away from my own self, from my own mind.
-            **** [{w_on}]
-                When I stood back up, I felt an eery sense of calm. I did not care anymore. {alter(cold, 3)} {alter (guilt, -2)}
-        *** (could_not_get_grip) [But I could not get a grip.]
-            But I could not get a grip. I was trembling. Tears started flowing uncontrollably. I don't know how long I spent there. I curled myself into a ball, and wept. {alter (despair, 3)} {alter (hope, -3)} {alter (fierce, -3)}
-            **** [{w_on}]
-            When I finally managed to stand up, I felt exhausted. My entire body was hurting. I had never felt so old and broken. {alter (old, 2)}
+    ** {fierce >= 2} [I would no longer fear.]
+        I steeled myself, clenched my jaw, ground my teeth, my fingernails {Colony.colony_nails_in_palm: digging into my palms once again|digging into my palm} - leaving deep, red marks and a lingering pain. {alter (fierce, 3)} {alter (fear, -3)} {alter (despair, -3)}
+        -> Parchment_Button (w_on) ->
+        Fear would not govern me. The creatures would not make me cower. If I died, I would die standing - and so I stood.
+    ** [I shut my heart close.]
+        Something broke inside of me. My ears started ringing, my vision went blurry for a moment; then I felt far away from my own self, from my own mind.
+        -> Parchment_Button (w_on) ->
+        When I stood back up, I felt an eery sense of calm. I did not care anymore. {alter(cold, 3)} {alter (guilt, -2)}
+    ** (could_not_get_grip) [But I could not get a grip.]
+        But I could not get a grip. I was trembling. Tears started flowing uncontrollably. I don't know how long I spent there. I curled myself into a ball, and wept. {alter (despair, 3)} {alter (hope, -3)} {alter (fierce, -3)}
+        -> Parchment_Button (w_on) ->
+        When I finally managed to stand up, I felt exhausted. My entire body was hurting. I had never felt so old and broken. {alter (old, 2)}
 + [Stop. I needed to stop thinking about it.]
     I needed to perish this line of thought now. Now was not the time to break down.
 
@@ -496,51 +497,11 @@ Since it had carried me this far, I could go all the way. {alter (hope, 1)}
 
 ->->
 
-=== Parchment_Button (name_variable)
 
-{shuffle:
-    - -> Rustle1 (name_variable) ->
-    - -> Rustle2 (name_variable) ->
-    - -> Rustle3 (name_variable) ->
-    - -> Rustle4 (name_variable) ->
-    - -> Rustle5 (name_variable) ->
-    - -> Rustle6 (name_variable) ->
-    - -> Rustle7 (name_variable) ->
-}
 
-->->
 
-= Rustle1 (name_variable)
 
-+ [{name_variable}] # AUDIOSFX: p_rustle1.mp3
-->->
 
-= Rustle2 (name_variable)
 
-+ [{name_variable}] # AUDIOSFX: p_rustle2.mp3
-->->
 
-= Rustle3 (name_variable)
 
-+ [{name_variable}] # AUDIOSFX: p_rustle3.mp3
-->->
-
-= Rustle4 (name_variable)
-
-+ [{name_variable}] # AUDIOSFX: p_rustle4.mp3
-->->
-
-= Rustle5 (name_variable)
-
-+ [{name_variable}] # AUDIOSFX: p_rustle5.mp3
-->->
-
-= Rustle6 (name_variable)
-
-+ [{name_variable}] # AUDIOSFX: p_rustle6.mp3
-->->
-
-= Rustle7 (name_variable)
-
-+ [{name_variable}] # AUDIOSFX: p_rustle7.mp3
-->->

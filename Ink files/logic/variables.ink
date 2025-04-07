@@ -14,22 +14,23 @@ VAR melancholy = 0
 VAR child_scared_of_me = 0
 VAR child_trusts_me = 0
 
-VAR w_on = "I write on →"
-VAR w_on_thoughts = "I write of my thoughts →"
-VAR w_on_dark = "I write of dark thoughts →"
+VAR start = "Start writing →"
 
+VAR w_on = "Write on →"
+VAR w_on_thoughts = "Write of my thoughts →"
+VAR w_on_dark = "Write of dark thoughts →"
 
-VAR m_on_past = "I muse about the past →"
+VAR m_on_past = "Muse about the past →"
 
-VAR d_on = "I describe this further →"
-VAR d_on_surroundings = "I describe the surroundings →"
+VAR d_on = "Describe further →"
+VAR d_on_surroundings = "Describe the surroundings →"
 
-VAR m_on = "I move on →"
+VAR m_on = "Move on →"
 
-VAR l_on_thought = "I linger on the thought →"
-VAR l_on_feeling = "I linger on the feeling →" 
+VAR l_on_thought = "Linger on this thought →"
+VAR l_on_feeling = "Linger on this feeling →" 
 
-VAR r_on = "I remember →"
+VAR r_on = "Remember →"
 
 LIST Items = Trenchcoat, Rope, Pickaxe, FlintKnife
 LIST CharacterStates = NotFound, Absent, Present, Dead

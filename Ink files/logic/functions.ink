@@ -69,6 +69,8 @@
             ~ return "trenchcoat"
         - Rope:
             ~ return "rope"
+        - FlintKnife:
+            ~ return "flint knife"
     }
     
 === function _DF_Name (item)
@@ -80,6 +82,8 @@
             ~ return "Trenchcoat"
         - Rope:
             ~ return "Rope"
+        - FlintKnife:
+            ~ return "Flint knife"
     }
     
 // --->>> FLOW CONTROL <<<---
