@@ -92,7 +92,7 @@ I draw myself closer to her and got down on my knees so as not to intimidate her
 
 - 
 *[{w_on}]
-- The kid was not moving by an inch except for her hand clutching the sharp flint with which she had had to kill the dreadful creature.
+- The kid was not moving by an inch except for her only hand which was clutching the sharp flint with which she had had to kill the dreadful creature.
 
 +[I sat down with her.]
 I calmly put my old body next to her because I didn't want to rush her.
@@ -134,7 +134,7 @@ I stammered: "It's okay now... we're together. We'll make it out."
 **[She stayed muted.]
 She looked at me funny, before nodding unconvincingly at what I said.
 **[She trusted me.]
-She lend me her hand, as I shook it I knew I made her a promise.
+She lend me her only hand, as I shook it I knew I made her a promise.
 **[She regained faith.]
 She's put herself back together and smiled fiercly at me.
 --
@@ -156,7 +156,7 @@ I went back through the tunnel first and waited for her. She came out a few minu
 
 
 - (out_of_gwen_cave)
-* [{w_on}] # IMAGE: Images/grandma_gwen_walking.PNG
+* [{w_on}] # IMAGE: Images/grandma_gwen_walking.PNG # AUDIOLOOP: Sounds/idea2.mp3
 - As {childState ? Present:we were|I was} back to the main tunnels {childState ? Present:the kid taught me her name in sign language : G.W.E.N.|I was thinking of a method to find my way around.}
 *[I followed my instincts.]
 {childState ? Present:At each crossroads, I let Gwen choose where to turn and which tunnel to take.|There was something peacefull to just letting my senses guide me.}
@@ -166,7 +166,9 @@ I went back through the tunnel first and waited for her. She came out a few minu
 {childState ? Present:Gwen was giving me a hard time as she walked briskly but I think I surprised her by keeping up with her despite my age.|I had completely lost myself in my thoughts, about my lost ones, my purpose, and I could only hope that chance would be kind to me.}
 
 -
--> Elevator_Arrival
+* [{w_on}]
+-
+-> Echoing_Caves
 
 -> DONE
 

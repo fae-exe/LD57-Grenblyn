@@ -3,6 +3,8 @@ INCLUDE logic\functions.ink
 
 INCLUDE logic\variables.ink
 
+INCLUDE logic\parchment_button.ink
+
 /*
 Available character variables:
 hope, fierce, despair, old
@@ -15,6 +17,7 @@ INCLUDE story\echoing_cave.ink
 INCLUDE story\lost_child.ink
 
 INCLUDE chrys_debug.ink
+
 
 // <br> = line break
 // &nbsp; = non-breaking space
@@ -31,8 +34,8 @@ VAR debug = false
 An interactive fiction scroll, quilled by these alphabetical grenblyns: # CLASS: end
 alyyyd, fae.exe, Grizembrrr and Nuelijarma. # CLASS: end
 
-* [Start writing →] # CLEAR
-
+-> Parchment_Button (start) ->
+# CLEAR
 - -> Colony
 
 === Debug
