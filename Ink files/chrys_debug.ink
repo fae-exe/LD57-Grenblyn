@@ -7,4 +7,7 @@
     -> Echoing_Caves
 * [Skip to the meeting with Gwen.]
     -> Lost_Child
+* [Skip to the echoing cave description.]
+    -> Echoing_Caves.echoing_cave_description
+    
     

@@ -156,7 +156,7 @@ I went back through the tunnel first and waited for her. She came out a few minu
 
 
 - (out_of_gwen_cave)
-* [{w_on}] # IMAGE: Images/grandma_gwen_walking.PNG
+* [{w_on}] # IMAGE: Images/grandma_gwen_walking.PNG # AUDIOLOOP: Sounds/idea2.mp3
 - As {childState ? Present:we were|I was} back to the main tunnels {childState ? Present:the kid taught me her name in sign language : G.W.E.N.|I was thinking of a method to find my way around.}
 *[I followed my instincts.]
 {childState ? Present:At each crossroads, I let Gwen choose where to turn and which tunnel to take.|There was something peacefull to just letting my senses guide me.}
