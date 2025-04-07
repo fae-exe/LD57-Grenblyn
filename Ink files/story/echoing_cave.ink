@@ -1,8 +1,7 @@
 === Echoing_Caves
-~ childState = Present
--
-*[{w_on}]
 
+-
+-> Parchment_Button (w_on) ->
 - Suddently, a familiar voice caught my attention.
 *[It was ex-lover's voice.]
 My heart missed a beat when I heard Mariana's voice calling my name.
@@ -14,7 +13,7 @@ Kidada. I can't believe she made it out{childState ? Present: too.|.}
 Gwen reacted to the voice immediately, planting her pleading gaze in mine before signing frantically what I understood to be 'Mom'.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - The voice seemed so close, {We_I(1)} pratically started running towards it.
 *[The voice was screaming in pain.]
 Some kind of creatures were after her, {We_I(1)} had to act fast.
@@ -24,8 +23,8 @@ The voice said she was thirsty, she begged {us_me()} to bring her water forthwit
 She said she has been waiting for {us_me()} but now that we were here we could join her.
 
 -
-*[{w_on}] {We_I(2)} decided to follow her voice and find its source.
--
+-> Parchment_Button (w_on) ->
+- {We_I(2)} decided to follow her voice and find its source.
 *[{We_I(2)} took left]
 It led {us_me()} to another tunnel.
 *[{We_I(2)} took right]
@@ -34,7 +33,7 @@ It led {us_me()} to another tunnel.
 It led {us_me()} to another tunnel.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - It was hard to define where it came from.
 *[{We_I(2)} took left]
 {We_I(2)} faced a bunch of tunnels difficult to negotiate.
@@ -44,7 +43,7 @@ It led {us_me()} to another tunnel.
 {We_I(2)} faced a bunch of tunnels difficult to negotiate.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - The voice kept escaping relentlessly as {We_I(1)} tried to track it.
 *[{We_I(2)} took left]
 Yet another tunnel mouth but narrower.
@@ -54,7 +53,7 @@ Yet another tunnel mouth but narrower.
 Yet another tunnel mouth but narrower.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - {We_I(2)} were hearing the voice echoing on the walls uninterruptly.
 *[{We_I(2)} took left]
 {We_I(2)} arrived at an empty cave hall.
@@ -64,7 +63,7 @@ Yet another tunnel mouth but narrower.
 {We_I(2)} arrived at an empty cave hall.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - {We_I(2)} had the heavy feeling {childState ? Present: we were|I was} going deeper an deeper into the unknown.
 *[{We_I(2)} took left]
 It was connected to a three ways crossroad.
@@ -74,7 +73,7 @@ It was connected to a three ways crossroad.
 It was connected to a three ways crossroad.
 
 -
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - Without thinking about how we would find {our_my(1)} way back in this maze {We_I(1)} let the voice guide {us_me()} to her.
 *[{We_I(2)} took left]
 A dead end.
@@ -84,19 +83,19 @@ A dead end.
 A dead end.
 
 - 
-*[{w_on}]
+-> Parchment_Button (w_on) ->
 - <br>
 <br>
 <br>
 <br>
 It was a mistake.
 - 
-*[{w_on}]
+-> Parchment_Button (w_on_dark) ->
 - {We_I(2)} should never have had come down there, there was nobody here.
-- 
-*[{w_on}]
-- 
-Nobody human.
+-> Parchment_Button (l_on_thought) ->
+- Nobody human.
+-> Parchment_Button (d_on_surroundings) ->
+- The echoing dead end, ink drawing.
 #IMAGE: 
 # AUDIOLOOP: Sounds/sad1.mp3
 - (echoing_cave_description)
@@ -251,7 +250,7 @@ LIST ExitTypes = Good, Bad1, Bad2
       ~ return "ahead"
   } // on peut mettre de l'aléatoire entre les guillemets pour varier les choses
   
-  VAR distanceToExit = 3
+  VAR distanceToExit = 4
 
 === Picked_Good_Exit
 
@@ -267,17 +266,20 @@ LIST ExitTypes = Good, Bad1, Bad2
 
 ~ creatureDistance -= 1// La diff principal avec au dessus c'est que tu réduits pas la distance à la sortie
 
+-> Check_Creature -> 
 // pas besoin de check si on se rapproche de la sortie, mais tu peux rajouter du fluff pour montrer qu'on est en train de se perdre
 - {stopping: 
-- You're doomed.
-- A dark, disturbing wind was blowing from the depths. {We_I(2)} felt as if the earth was going to crush {us_me()}, as if the darkness was pulling on {our_my(1)} bones.
-- Last phrase {~ zaigudkaz | "zfzz | zfefze }
+- A dark, disturbing wind was blowing from the depths.
+- The voices had caught up with us and pestered us.
+- {We_I(2)} felt as if the earth was going to crush {us_me()}.
+- {We_I(2)} were feeling the darkness pulling on {our_my(1)} bones.
+- A {~dooming|suffocating|paralyzing|heavy|unpleasant} {sensation|feeling|thought|doubt|idea} {harassed|haunted|took hold of|came over|overwhelmed}{us_me()}.
 }
 -
-*[{w_on}]
+-> Parchment_Button (d_on_surroundings) ->
 -
 
--> Check_Creature -> 
+
 
 -> Picking_Direction
 
@@ -286,18 +288,25 @@ LIST ExitTypes = Good, Bad1, Bad2
 {
    - distanceToExit <= 0: -> Exit_Echoing_Caves
    - distanceToExit <= 1 && not Getting_Closer1: -> Getting_Closer1-> 
-   - distanceToExit <= 2 && not Getting_Closer2: -> Getting_Closer2-> // faut créer les noeuds pour ça mais t'as compris l'idée
+   - distanceToExit <= 2 && not Getting_Closer2: -> Getting_Closer2->
+   - distanceToExit <= 3 && not Getting_Closer3: -> Getting_Closer3->
 }
 
 ->->
 
 = Getting_Closer1
-
+The resonant dead end was far behind {us_me()} by now.
+-> Parchment_Button (d_on_surroundings) ->
 ->->
 
 = Getting_Closer2
-I could tell 
-*[{w_on}]
+{childState ? Present:We were|I was} then moving forward at a determined pace, without faltering.
+-> Parchment_Button (d_on_surroundings) ->
+->->
+
+= Getting_Closer3
+{We_I(1)} gathered {our_my(1)} wits and concentrated on the road ahead.
+-> Parchment_Button (d_on_surroundings) ->
 ->->
 
 === Check_Creature
