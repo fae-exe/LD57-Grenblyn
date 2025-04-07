@@ -127,13 +127,15 @@ h2 {
 
 .hand {
     position: sticky;
-    height: 70%;
-    width: 30%;
+    bottom: 0;
+    height: 48%;
+    width: 38%;
     margin-top: -16%;
-    margin-left: 70%;
-    background-image: url("Images/writing_hand.PNG");
+    margin-left: 60%;
+    /* background-image: url("Images/writing_hand.PNG");
     background-size: 78%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    overflow: visible;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
