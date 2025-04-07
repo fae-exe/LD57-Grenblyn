@@ -1,12 +1,15 @@
 === Lost_Child
-#AUDIO
+# AUDIOLOOP:
+# AUDIO: Sounds/anticipation1.mp3
 
 - (opts)
 
 {stopping:
-- As I made my way through a coarse, cramped tunnel, I thought I sensed a presence.
+- As I made my way through a coarse, cramped tunnel, I thought I sensed a presence. 
+    # IMAGE: Images/grandma_outofcave_1.PNG
 - I approached slowly as I was trying to learn more about what was lurking there.
 - Whatever was at the bottom of this cave was around the corner.
+    # IMAGE: Images/grandma_outofcave_2.PNG
 - I froze in place, suddenly wondering if I was about to fall into the trap of a unknown monstrosity and if I should run for my life.
 }
 
@@ -62,7 +65,8 @@
 * (encountering_gwen) {opts>=3} [I went towards it.]
 The grisly scene of a kid kneeling next to a dying atrocity appeared before my eyes.
 # IMAGE: Images/gwen_encounter.PNG
-
+# AUDIOLOOP: Sounds/calm1.mp3
+# AUDIO: 
 
 * {opts>=4} [I left for my safety.]
 As I turned to leave, a kid's voice echoed to me: "Is anybody here?", it said. 
@@ -152,7 +156,7 @@ I went back through the tunnel first and waited for her. She came out a few minu
 
 
 - (out_of_gwen_cave)
-* [{w_on}]
+* [{w_on}] # IMAGE: Images/grandma_gwen_walking.PNG
 - As {childState ? Present:we were|I was} back to the main tunnels {childState ? Present:the kid taught me her name in sign language : G.W.E.N.|I was thinking of a method to find my way around.}
 *[I followed my instincts.]
 {childState ? Present:At each crossroads, I let Gwen choose where to turn and which tunnel to take.|There was something peacefull to just letting my senses guide me.}
@@ -162,9 +166,10 @@ I went back through the tunnel first and waited for her. She came out a few minu
 {childState ? Present:Gwen was giving me a hard time as she walked briskly but I think I surprised her by keeping up with her despite my age.|I had completely lost myself in my thoughts, about my lost ones, my purpose, and I could only hope that chance would be kind to me.}
 
 -
--> Echoing_Caves
+-> Elevator_Arrival
 
 -> DONE
+
 === Talking_To_Gwen 
 { -> Lost_Child.talking_to_gwen|-> Lost_Child.leaving_gwen_cave}
 

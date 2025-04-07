@@ -1,8 +1,11 @@
 === Elevator_Arrival
 
+# AUDIO:
+# AUDIOLOOP: Sounds/liminal1.mp3
+
 //~ childState = Present
 
-{We_I(2)} had been walking for a while, when - in front of {us_me()}, finally - a dark metal box. Seven meters tall, barely a meter wide. A slit to the right reveals it harbors, in fact, a door. # AUDIOLOOP: Sounds/liminal1.mp3
+{We_I(2)} had been walking for a while, when - in front of {us_me()}, finally - a dark metal box. Seven meters tall, barely a meter wide. A slit to the right reveals it harbors, in fact, a door.
 
 {childState ? Present: -> Elevator_Child.React1 ->}
 

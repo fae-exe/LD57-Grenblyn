@@ -22,17 +22,16 @@ INCLUDE chrys_debug.ink
 // # IMAGE: Images/Grandma1.PNG
 // # AUDIOLOOP: Sounds/loop2.mp3
 
-# THEME: light
-
 // SET TO FALSE WHEN MAKING THE WEB EXPORT
 
 VAR debug = false
 
 {debug: -> Debug}
 
-An interactive fiction, by the alphabetical grenblyns alyyyd asmar, fae.exe, Grizembrrr and Nuelijarma. # CLASS: end
+An interactive fiction scroll, quilled by these alphabetical grenblyns: # CLASS: end
+alyyyd, fae.exe, Grizembrrr and Nuelijarma. # CLASS: end
 
-* [🪶 Start writing →] # CLEAR
+* [Start writing →] # CLEAR
 
 - -> Colony
 

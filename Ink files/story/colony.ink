@@ -1,6 +1,6 @@
 === Colony ===
 
-- Blood was running down my face and my head spun, as my heart beat so hard I felt it within my teeth. # Sounds/loop2.mp3 # Images/cavemouth_dark.PNG
+- Blood was running down my face and my head spun, as my heart beat so hard I felt it within my teeth. # AUDIOLOOP: Sounds/loop2.mp3 # IMAGE: Images/cavemouth_dark.PNG
 
 LIST KS_Survivors = Slaughtered, Dismembered, BonesEaten // this is to track the player knowledge of the other survivors' fate
 LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins
@@ -67,7 +67,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
 
 * [{w_on}]
 
-- I emerged from the maw of the deep; the cavern was immense, tens of meters high, metal towers grafted to the walls, rows of pipes and purifiers, and at the center of it all - the quarry.
+- I emerged from the maw of the deep; the cavern was immense, tens of meters high, metal towers grafted to the walls, rows of pipes and purifiers, and at the center of it all - the quarry. # IMAGE: Images/quarry.PNG
 
 * [This was still my home.]
     {KS_Tunnels ? CityInRuins:Even in its current state, abandonned, broken - all I could see was my home.|I stared at the ruins, the broken husk of the city - and I still saw my home. {learn(KS_Tunnels, CityInRuins)}} {alter (nostalgia, 1)} {alter (hope, 1)} {alter (fear, -1)}
@@ -248,11 +248,11 @@ It was hard to have faith - to truly believe that going outside would save us no
             At the time, I felt incredibly overwhelmed. My head was spinning, my whole entire body was trying to give up.
         ---
         *** {despair >= 7} [I broke down completely.]
-            {Dead_Friends.could_not_get_grip:This time, I broke down completely.|I broke down completely.} I lost it. I was crying, sobbing - everything seemed entirely hopeless and pointless. {alter (despair, 3)}
+            {Dead_Friends.could_not_get_grip:This time, I broke down completely.|I broke down completely.} I lost it. I was crying, sobbing - everything seemed entirely hopeless and pointless. {alter (despair, 3)} # IMAGE: Images/grandma_blood.PNG
             **** [{w_on}]
                 -> Heard_Screams
         *** {despair < 7} [The tears started to flow.]
-            The tears started to flow, and they just would not stop.
+            The tears started to flow, and they just would not stop. # IMAGE: Images/grandma_sad.PNG
             **** [{w_on}]
                 I leaned on a giant machine for a moment, catching my breath, looking in the distance, at the quarry and the houses. {alter (despair, -1)}
                 ***** [{w_on}]
