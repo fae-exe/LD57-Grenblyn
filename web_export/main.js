@@ -85,6 +85,17 @@
                   this.audio.play();
                 }
 
+                // AUDIOSFX: src
+                if( splitTag && splitTag.property == "AUDIOSFX" ) {
+                    if('audio' in this) {
+                      this.audio.pause();
+                      this.audio.removeAttribute('src');
+                      this.audio.load();
+                    }
+                    this.audio = new Audio(splitTag.val);
+                    this.audio.play();
+                  }
+
                 // AUDIOLOOP: src
                 else if( splitTag && splitTag.property == "AUDIOLOOP" ) {
                   if('audioLoop' in this) {

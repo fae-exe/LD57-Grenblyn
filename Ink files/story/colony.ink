@@ -1,8 +1,8 @@
 === Colony ===
 
-- I remember the dread. The pain. How blood was running down my face - how my head spun. 
-* [{r_on}]
-- My heart was beating so hard, I felt it within my teeth. # AUDIOLOOP: Sounds/loop2.mp3 # IMAGE: Images/cavemouth_lights.PNG
+- I remember the dread. The pain. How blood was running down my face - how my head spun. # AUDIOLOOP: Sounds/loop2.mp3
+-> Parchment_Button (r_on) ->
+- My heart was beating so hard, I felt it within my teeth. 
 
 LIST KS_Survivors = Slaughtered, Dismembered, BonesEaten // this is to track the player knowledge of the other survivors' fate
 LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins, UnchartedTerritory
@@ -17,9 +17,9 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
     My hand curled into a fist as my nails dug into my palm. {alter(fierce, 1)}
 
 -
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
-- Dark stone bowels surrounded me, lit by the orange glow of forgelamps; the comforting chirps of cricket-beacons every thirty meters or just about.
+- Dark stone bowels surrounded me, lit by the orange glow of forgelamps; the comforting chirps of cricket-beacons every thirty meters or just about. # IMAGE: Images/cavemouth_lights.PNG
 
 - (top)
 
@@ -494,4 +494,53 @@ Since it had carried me this far, I could go all the way. {alter (hope, 1)}
 -
 * [{w_on}]
 
+->->
+
+=== Parchment_Button (name_variable)
+
+{shuffle:
+    - -> Rustle1 (name_variable) ->
+    - -> Rustle2 (name_variable) ->
+    - -> Rustle3 (name_variable) ->
+    - -> Rustle4 (name_variable) ->
+    - -> Rustle5 (name_variable) ->
+    - -> Rustle6 (name_variable) ->
+    - -> Rustle7 (name_variable) ->
+}
+
+->->
+
+= Rustle1 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle1.mp3
+->->
+
+= Rustle2 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle2.mp3
+->->
+
+= Rustle3 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle3.mp3
+->->
+
+= Rustle4 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle4.mp3
+->->
+
+= Rustle5 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle5.mp3
+->->
+
+= Rustle6 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle6.mp3
+->->
+
+= Rustle7 (name_variable)
+
++ [{name_variable}] # AUDIOSFX: p_rustle7.mp3
 ->->
