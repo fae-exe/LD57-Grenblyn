@@ -102,39 +102,24 @@ h2 {
 .container {
     display: block;
     position: relative;
-    max-width: 700px;
+    max-width: 860px;
     padding: 80px;
-    padding-top: 10px;
     top: 0 auto;
     margin: 0 auto 0 auto;
     background-image: url("Images/parchment_background.PNG"), url("Images/parchment_shadow.PNG");
-    background-size: 58%, 76% 100%;
+    background-size: 56%, 90% 100%;
     background-attachment: local, fixed;
     background-position: center top, center top;
     background-repeat: repeat-y, no-repeat;
 }
 
-/*
-.container:fullscreen{
-    max-width: 800px;
-    padding: 100px;
-    background-size: 70%, 80% 100%;
-    background-attachment: local, fixed;
-    background-position: center top, center top;
-    background-repeat: repeat-y, no-repeat;
-}
-*/
 
 .hand {
     position: sticky;
     bottom: 0;
     height: 48%;
-    width: 38%;
-    margin-top: -16%;
-    margin-left: 60%;
-    /* background-image: url("Images/writing_hand.PNG");
-    background-size: 78%;
-    background-repeat: no-repeat; */
+    width: 41%;
+    margin-left: 62.2%;
     overflow: visible;
 }
 
@@ -151,7 +136,7 @@ h2 {
 }
 
 p {
-    margin: 20px 140px 20px 140px;
+    margin: 20px 162px 20px 162px;
     font-size: 22px;
     color: #441b08;
     line-height: 1.2em; 
@@ -197,9 +182,9 @@ strong {
 }
 
 img {
-    margin: 0 100px 0 100px;
+    margin: auto;
     display: block;
-    max-width: 72%;
+    max-width: 66.5%;
 }
 
 .container .hide {
