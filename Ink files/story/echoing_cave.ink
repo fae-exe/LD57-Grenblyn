@@ -15,64 +15,101 @@ Gwen reacted to the voice immediately, planting her pleading gaze in mine before
 
 -
 *[{w_on}]
-- The voice was close, {We_I(1)} pratically started running towards it.
+- The voice seemed so close, {We_I(1)} pratically started running towards it.
 *[The voice was screaming in pain.]
 Some kind of creature was after her, {We_I(1)} had to act fast.
 *[The voice was asking for help.]
 The voice said she was thirsty, she begged {us_me()} to bring her water forthwith.
 *[The voice was calling out to {us_me()}.]
-She said she has been waiting for us but now that we were here we could join her.
+She said she has been waiting for {us_me()} but now that we were here we could join her.
 
 -
-*[{w_on}]
-- It was hard to define where the voice came from.
-*[{We_I(2)} went left]
-Another tunnel entry.
-*[{We_I(2)} went right]
-Another tunnel entry.
+*[{w_on}] {We_I(2)} decided to follow her voice and find its source.
+-
+*[{We_I(2)} took left]
+It led {us_me()} to another tunnel.
+*[{We_I(2)} took right]
+It led {us_me()} to another tunnel.
 *[{We_I(2)} went straight ahead]
-Another tunnel entry.
+It led {us_me()} to another tunnel.
 
 -
 *[{w_on}]
-- The voice kept escaping as {We_I(1)} tried to follow it.
-*[{We_I(2)} went left]
-An empty cave hall.
-*[{We_I(2)} went right]
-An empty cave hall.
+- It was hard to define where it came from.
+*[{We_I(2)} took left]
+{We_I(2)} faced a bunch of tunnels difficult to negotiate.
+*[{We_I(2)} took right]
+{We_I(2)} faced a bunch of tunnels difficult to negotiate.
 *[{We_I(2)} went straight ahead]
-An empty cave hall.
+{We_I(2)} faced a bunch of tunnels difficult to negotiate.
 
 -
 *[{w_on}]
-- It kept echoing on the walls uninterruptly.
-*[{We_I(2)} went left]
-A three ways crossroad.
-*[{We_I(2)} went right]
-A three ways crossroad.
+- The voice kept escaping relentlessly as {We_I(1)} tried to track it.
+*[{We_I(2)} took left]
+Yet another tunnel entry but narrower.
+*[{We_I(2)} took right]
+Yet another tunnel entry but narrower.
 *[{We_I(2)} went straight ahead]
-A three ways crossroad.
+Yet another tunnel entry but narrower.
 
 -
 *[{w_on}]
-- {We_I(2)} started feeling that {childState ? Present: we were|I was} going in circles.
-*[{We_I(2)} went left]
+- We were hearing the voice echoing on the walls uninterruptly.
+*[{We_I(2)} took left]
+{We_I(2)} arrived at an empty cave hall.
+*[{We_I(2)} tooj right]
+{We_I(2)} arrived at an empty cave hall.
+*[{We_I(2)} went straight ahead]
+{We_I(2)} arrived at an empty cave hall.
+
+-
+*[{w_on}]
+- {We_I(2)} had the heavy feeling {childState ? Present: we were|I was} going deeper an deeper into the unknown.
+*[{We_I(2)} took left]
+It was connected the a three ways crossroad.
+*[{We_I(2)} took right]
+It was connected to a three ways crossroad.
+*[{We_I(2)} went straight ahead]
+It was connected to a three ways crossroad.
+
+-
+*[{w_on}]
+- Without thinking about how we would find our way back in this maze {We_I(1)} let the voice guide {us_me()} to her.
+*[{We_I(2)} took left]
 A dead end.
-*[{We_I(2)} went right]
+*[{We_I(2)} took right]
 A dead end.
-*[{We_I(2)} went straight ahead]
+*[{We_I(2)} took straight ahead]
 A dead end.
 
 - 
 *[{w_on}]
-- We should get out, there's nobody here.
+- <br>
+<br>
+<br>
+<br>
+It was a mistake.
+- 
+*[{w_on}]
+- We should never have had come down there, there was nobody here.
+- 
+*[{w_on}]
+- 
+Nobody human.
 
-*[The exit disapeared.]
-*[The voice grew louder.]
-*[We left by where we came in.]
+*[Describe the voice.]
+The din of voice echoes was deafening in this place as if it was trapped in there.
+*[Describe the place.]
 
--
+*[Describe the vibe.]
+While logic screamed at {us_me()} to flee, something made {us_me()} want to stay here. This was it, {We_I(1)} had reached the voice, {We_I(1)} could be satisfied with {childState ? Present: ourselves|myself} and rest
+*{childState ? Present} [Let Gwen describe.]
+The voice turned into a whisper, then multiple whispers, they wanted us to stay forever, it got very scary.
 
+- 
+*[{w_on}]
+- 
 
 
 
