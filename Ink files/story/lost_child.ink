@@ -134,7 +134,7 @@ I stammered: "It's okay now... we're together. We'll make it out."
 **[She stayed muted.]
 She looked at me funny, before nodding unconvincingly at what I said.
 **[She trusted me.]
-She lend me her hand, as I shook it I knew I made her a promise.
+She lend me her only hand, as I shook it I knew I made her a promise.
 **[She regained faith.]
 She's put herself back together and smiled fiercly at me.
 --
