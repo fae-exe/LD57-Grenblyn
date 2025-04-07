@@ -103,26 +103,27 @@ It was a mistake.
 The din of voice echoes was deafening in this place as if it was trapped in these mezmerising crystal.
 **[Describe the crystal's aspect.] The crystals took weird humanoïde shapes, the bigger ones had the most defined contours, whereas the smallest were more deformed as if they melted over time.
 **[Describe the cavern's floor.] From the crystals was oozing a strange dark sticky oil, dripping and spreading on the cavern's floor.
--> Echoing_Cave_Description
+---> Echoing_Cave_Description
 *[Describe the place.]
 Every surface of this cavern were covered with eerie mushrooms-like plants growing from the cavern's ground to the ceiling into the cracks.
 **[Describe the mushrooms's aspect.] Clusters of small bluish beigns filled the cave, they were slowly moving as if dancing or pumping. It could have been vegetal or animal or mushroom or something else.
 **[Describe the ambiant light.] These mushrooms gave off a soft blue-violet light that soothed the room.
+---> Echoing_Cave_Description
 *[Describe the vibe.]
 While logic screamed at {us_me()} to flee, something made {us_me()} want to stay here. This was it, {We_I(1)} had reached the voice, {We_I(1)} could be satisfied with {childState ? Present:ourselves|myself} and rest.
 **[Describe the voice's aspect.] The echoes whispering alltogether at the same time were creating an hypnotic background buzz.
 **[Describe the mist.] Gradually released into the air, a cloud of spores settled over the room, and its distinctive scent of fresh dirt calmed {our_my(1)} nerves and minds.
--> Echoing_Cave_Description
+---> Echoing_Cave_Description
 *{childState ? Present} [Let Gwen describe.]
 The voice turned into a whisper, then multiple whispers, they wanted {us_me()} to stay forever, it got very scary and was very dangerous as in life-threatening.
 **[Gwen's description of each scary thing in there.] Scary rocks, scary sound, scary liquid.
 **[Gwen's description of each dangerous thing in there.] Dangerous scent, dangerous light, dangerous peacefullness, dangerous plants.
--> Echoing_Cave_Description
+---> Echoing_Cave_Description
 
-*(leaving_echoing_cave)[Describing this won't help anyone, {We_I(1)} should better write about how to get out.]
-- It was more than time to get out of here.
+*(leaving_echoing_cave) [Describing this won't help anyone, {We_I(1)} should better write about how to get out.]
+It was more than time to get out of here.
 
-- 
+-
 -> Parchment_Button (w_on) ->
 - {We_I(2)} had lost so much time on this vain quest.
 
@@ -151,7 +152,7 @@ The voice turned into a whisper, then multiple whispers, they wanted {us_me()} t
 -> DONE
 
 === Echoing_Cave_Description
-{ -> Echoing_Cave.echoing_cave_description|-> Echoing_Cave.leaving_echoing_cave}
+{ -> Echoing_Cave.echoing_cave_description|-> Echoing_Cave.echoing_cave_description|-> Echoing_Cave.echoing_cave_description|-> Echoing_Cave.leaving_echoing_cave}
 
 VAR creatureDistance = 8
 
@@ -213,7 +214,7 @@ LIST ExitTypes = Good, Bad1, Bad2
   - {_DF_to_direction (direction)}, along the staircase was running a dark liquid.
   - {_DF_to_direction (direction)}, rays of light diffracted in a human sized gem pillar.
   - {_DF_to_direction (direction)}, crystal vein starts were visible here and there on the stone's surface.
-  - {_DF_to_direction (direction)}, lanterns of some sort wedged into the walls illuminated the path.
+  - {_DF_to_direction (direction)}, pale lanterns of some sort wedged into the walls illuminated the path.
   - {_DF_to_direction (direction)}, the tunnel exuded a soothing atmosphere.
   - {_DF_to_direction (direction)}, a forged metal gateway was left ajar, its curious hospitality inviting us to use it.
 }
@@ -278,10 +279,10 @@ LIST ExitTypes = Good, Bad1, Bad2
 // pas besoin de check si on se rapproche de la sortie, mais tu peux rajouter du fluff pour montrer qu'on est en train de se perdre
 - {stopping: 
 - A dark, disturbing wind was blowing from the depths.
-- The voices had caught up with us and pestered us.
-- {We_I(2)} felt as if the earth was going to crush {us_me()}.
-- {We_I(2)} were feeling the darkness pulling on {our_my(1)} bones.
-- A {~dooming|suffocating|paralyzing|heavy|unpleasant} {sensation|feeling|thought|doubt|idea} {harassed|haunted|took hold of|came over|overwhelmed}{us_me()}.
+- The echoing voices had caught up with us and pestered us.
+//- {We_I(2)} felt as if the earth was going to crush {us_me()}.
+//- {We_I(2)} were feeling the darkness pulling on {our_my(1)} bones.
+- A {~dooming|suffocating|paralyzing|heavy|unpleasant} {sensation|feeling|thought|doubt|idea} {harassed|haunted|took hold of|came over|overwhelmed} {us_me()}.
 }
 -
 -> Parchment_Button (d_on_surroundings) ->
@@ -313,7 +314,7 @@ The resonant dead end was far behind {us_me()} by now.
 ->->
 
 = Getting_Closer3
-{We_I(1)} gathered {our_my(1)} wits and concentrated on the road ahead.
+{We_I(2)} gathered {our_my(1)} wits and concentrated on the road to take.
 -> Parchment_Button (d_on_surroundings) ->
 ->->
 
@@ -321,6 +322,7 @@ The resonant dead end was far behind {us_me()} by now.
 
 {
   // - creatureDistance <= 0 && not Caught_Us: -> Caught_Us
+   - creatureDistance <= 0 && not So_Very_Close: -> So_Very_Close ->
    - creatureDistance <= 1 && not Very_Close: -> Very_Close ->
    - creatureDistance <= 3 && Close : -> Close ->
    - creatureDistance <= 5 && not Screams_In_Distance : -> Screams_In_Distance ->
@@ -338,6 +340,12 @@ The creature had caught {us_me()}. {We_I(2)} had no choice but to try and defend
    - i_has (FlintKnife) && (Pickaxe) : -> Defend_With_Weapons
    - else: -> Struggle_Blindly
 } 
+
+= So_Very_Close
+
+The monstruosity tried to get a hold of {childState ? Present:Gwen|my neck} in a leap forward. Hopefully {We_I(1)} turned around last second and it failed.
++ [{w_on}]
+- ->->
 
 = Very_Close
 
