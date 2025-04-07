@@ -26,13 +26,15 @@ INCLUDE chrys_debug.ink
 
 // SET TO FALSE WHEN MAKING THE WEB EXPORT
 
-VAR debug = true
+VAR debug = false
 
 {debug: -> Debug}
 
-* [🪶 Start writing →]
+An interactive fiction, by the alphabetical grenblyns alyyyd asmar, fae.exe, Grizembrrr and Nuelijarma. # CLASS: end
 
-- -> Elevator_Arrival
+* [🪶 Start writing →] # CLEAR
+
+- -> Colony
 
 === Debug
 

@@ -130,6 +130,7 @@ She's put herself back together and smiled fiercly at me.
 -> Talking_To_Gwen
 
 *(leaving_gwen_cave) [We had no time to lose.]
+~ childState += Present
 The longer we stood at the same place, the greater the danger.
 **[I told her to follow me.]
 She followed in my footsteps, pacing her walking rhythm on mine.
@@ -140,9 +141,11 @@ I went back through the tunnel first and waited for her. She came out a few minu
 
 
 
--
+- 
+* [{w_on}]
 
--> DONE
+-> Elevator_Arrival
+
 === Talking_To_Gwen 
 { -> Lost_Child.talking_to_gwen|-> Lost_Child.leaving_gwen_cave}
 
