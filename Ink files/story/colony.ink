@@ -1,10 +1,12 @@
 === Colony ===
 
-- Blood was running down my face and my head spun, as my heart beat so hard I felt it within my teeth. # AUDIOLOOP: Sounds/loop2.mp3 # IMAGE: Images/cavemouth_dark.PNG
+- I remember the dread. The pain. How blood was running down my face - how my head spun. 
+* [{r_on}]
+- My heart was beating so hard, I felt it within my teeth. # AUDIOLOOP: Sounds/loop2.mp3 # IMAGE: Images/cavemouth_lights.PNG
 
 LIST KS_Survivors = Slaughtered, Dismembered, BonesEaten // this is to track the player knowledge of the other survivors' fate
-LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins
-LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSomeoneEscaped, EscapeAtAnyCost, HurtHand, GoddessesAngry, Pious
+LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins, UnchartedTerritory
+LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSomeoneEscaped, EscapeAtAnyCost, HurtHand, GoddessesAngry, Pious, KilledHorrors
 
 * [I was shaken.]
     They had been slaughtered - never had a chance. My hands shook uncontrollably. {alter(fear, 1)} {alter(nauseous, 1)} {alter (despair, 1)}
@@ -22,7 +24,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
 - (top)
 
 
-+ [{l_on}]
++ [{{l_on_feeling}|{l_on_thought}}]
 {stopping:
     - These were familiar tunnels - rising towards the city from the corewards realms. What we'd call the city, anyways; our haven, our refuge. {alter (hope, 2)}
         ~ KS_Tunnels += Familiar
@@ -138,34 +140,72 @@ LIST KS_Childhood = FirstExode
 -
 * [{w_on}]
 
-- I was loosing my footing so easily in this place.
-*[a little bit of poetry]
-Ideas were escaping from my head as easily as if my skull were an old sieve that lets the water out but keeps the silt in, the suffocating thoughts that blocked my breathing.
-*[I was feeling demined]
-This ominous feeling that going out won't be my salvation haunted me.
-** [{w_on}]
-But I knew no other way.{alter(despair, 1)}
-*[my fate]
-As a path carver it was my duty to open the ways to safety, to possibles future.
-** [{w_on}]
-I had to stop fleeing my destiny.
-
+- The ground was covered in cracks, gears, chain belts, tools and spilled lubricant. It was so easy to lose your footing, every step of the way.
+*[{w_on_dark}]
+    Thoughts kept leaking from my head - my skull an old sieve; straining the water, retaining only silt. Anxiety sprayed the city walls with long-gone shadows. {alter (despair, 2)}
+    ** [{w_on}]
+    -- My breathing grew labored as they circled around me, closing in - suffocating.
+    ** [{w_on}]
+    -- Every shadow a corpse, in the theater of my mind. Everything, in that haze, was a source of apprehension.
+    ** [The horror hunting me.]
+        I thought, at the time, that one of the horrors was on my trail - hungry for my blood, specifically.
+        *** [I had killed their own.]
+        I was not a lamb to be slaughtered. And when the rocks gave way to flesh - I had no qualms to keep carving. 
+        **** [{w_on}]
+        ---- (colony_killed_their_own) Of the horrors we had slain - many died by my hand. {alter (fierce, 2)} {alter (despair, -1)} {alter (fear, -2)}
+            ~ PlayerStates += KilledHorrors
+        *** [I had escaped their grasp.]
+            I had been away from my team when they murdered them. They are smart creatures, and I still believe they knew that I was missing. {alter (guilt, 1)} {alter (fear, 1)}
+            **** [{w_on}]
+                And that they were looking for me.
+        *** [They bore a grudge.]
+            I had been a leader to my people. I was one of the elder of the city, and I had trained most of our path carvers myself.
+            **** [{w_on}]
+            -> colony_killed_their_own
+        --- 
+        *** [{w_on}]
+        --- Being personally hunted, by a creature capable of boundless cruelty.
+        
+    ** [My own death.]
+        Scenes of my own death, of my parents' death, echoed on the stone walls as if to torment me. {alter (fear, 2)}
+*[{d_on_surroundings}]
+    I had played, decades ago, in these streets. It was surprisingly warm down here, with all the dredgers, the smelters, the furnaces. {alter(nostalgia, 1)} {alter (despair, -1)}
+    ** [A peaceful life.]
+    ** [A time long gone.]
+    ** [I would rather forget.]
+    In that moment, as thoughts of my childhood, of simpler times before the crawling horrors would come 
+    --
+    ** [{w_on}]
+    -- I was descending, towards the city center. I needed to make my way to the condemned tunnels. {alter (hope, 1)}
+    ** [Towards the surface.]
+        The ones that lead up - to the surface world. <> -> no_one_knew
+    ** [Towards the unknown.]
+        After sixty years, they might as well be uncharted territory. <>
+        --- (no_one_knew) No one could say what we'd find up there - or how dangerous it would be.
+    ** [I hoped the bulkhead still worked.]
+        I could only hope the heavy bulkhead could still be opened, {PlayerStates ? HurtHand: especially with my hand in that state|even by someone my age}. {alter (old, 1)}
+*[{m_on_past}]
+{KS_Survivors !? PathCarver: Path carvers like me {learn (KS_Survivors, PathCarver)}|Path carvers} had a sworn duty to open the way, to new possibilities. {alter (fierce, 1)}
+    ** [{w_on}]
+    -- To new futures for the refugees - for everyone in the city. This was what I had done all my life - exploring, always farther down.
+    ** [We had no choice.]
+        We had no choice. Without the resources, without the materials, the space it afforded us, the food we discovered - we would have been long dead. {alter (guilt, -2)}
+    ** [Was it our fault?]
+        Maybe, if we hadn't dugged as far... If we hadn't used the dredgers and all the other machines...
+        *** [{w_on}]
+            Maybe the horrors wouldn't have found us. {KS_Survivors !? Slaughtered: Maybe my comrades wouldn't have been slaughtered as they were. {learn (KS_Survivors, Slaughtered)}} {alter (guilt, 2)} {alter (despair, 1)}
+        *** [{m_on}]
+            No matter. What is done is done, and there is no way to know for certain. {alter (guilt, -1)} {alter (cold, 2)}
+    ** [Maybe this was the next step.]
+    Maybe going back to the surface was actually the next logical step - the continuation of my duties, of my role, of everything I stood for.
+    *** [{w_on}]
+        And if that was the case - I was not going to run from it. {alter (fierce, 2)} {alter (despair, -1)} {alter (guilt, -1)}
 -
 * [{w_on}]
 
--These thoughts were echoeing in a loop on the stone walls around me. To undermine my morale.
+- My weary mind drifted away as I walked; my legs tired, my feet in pain. 
 
--
-* [{w_on}]
-
-- My weary mind was drifting away again.
-+[the fear of what is following me]
-Knowing the creature's unquenchable thirst keept me moving forward.
-+[the fear of what's ahead of me]
-I have heard and learnt the stories of the great drowning, yet I was going to it.
-++ [{w_on}]
-Or I would end up drained by that monster.
-+[how was life here before]
+* [The life we used to live here.]
 Before the crawling horror came, when the water was still flowing through the cracks of our caves, life was pretty peacefull.{alter (nostalgia, 1)}
 
 -
@@ -329,7 +369,7 @@ That was when I heard the screams.
 VAR dead_friends_content_done = false
 VAR vomited = 0
 - (top) 
-+ [{l_on}]
++ [{l_on_thought}]
     {stopping:
         - Their skin had been flayed, pierced, plastered over the rocks. It was burnt from the acid sprays; and emitted an acrid smell that had brought tears to my eyes and stung my throat. {alter (nauseous, 2)} {alter (fear, 1)} -> top
         - Their entrails had been laid in a mound in the center of the small cave where I discovered them, in a crude pit dug by the creatures. There was so much intentionality to the act, so much cruelty. {alter (nauseous, 2)} {alter (fear, 1)} -> top
