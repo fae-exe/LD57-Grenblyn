@@ -288,7 +288,7 @@
         var target = previousBottomEdge;
 
         // Can't go further than the very bottom of the page
-        var limit = outerScrollContainer.scrollHeight - 0.48*handContainer.clientHeight - outerScrollContainer.clientHeight;
+        var limit = outerScrollContainer.scrollHeight - 0.2*handContainer.scrollHeight - outerScrollContainer.clientHeight;
         if( target > limit ) target = limit;
 
         var start = outerScrollContainer.scrollTop;
