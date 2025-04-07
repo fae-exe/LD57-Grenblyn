@@ -128,10 +128,6 @@ We leave.
 -> Picking_Direction
 
 
-
-
-
-
 === Defend_With_Flint_Knife
 -> DONE
 === Defend_With_Pickaxe

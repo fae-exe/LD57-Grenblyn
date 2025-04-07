@@ -92,7 +92,7 @@ I draw myself closer to her and got down on my knees so as not to intimidate her
 
 - 
 *[{w_on}]
-- The kid was not moving by an inch except for her hand clutching the sharp flint with which she had had to kill the dreadful creature.
+- The kid was not moving by an inch except for her only hand which was clutching the sharp flint with which she had had to kill the dreadful creature.
 
 +[I sat down with her.]
 I calmly put my old body next to her because I didn't want to rush her.
