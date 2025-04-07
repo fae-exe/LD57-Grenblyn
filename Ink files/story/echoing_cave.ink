@@ -1,6 +1,6 @@
-=== Echoing_Caves
+=== Echoing_Cave
+ -
 
--
 -> Parchment_Button (w_on) ->
 - Suddently, a familiar voice caught my attention.
 *[It was ex-lover's voice.]
@@ -103,7 +103,7 @@ It was a mistake.
 The din of voice echoes was deafening in this place as if it was trapped in these mezmerising crystal.
 **[Describe the crystal's aspect.] The crystals took weird humanoïde shapes, the bigger ones had the most defined contours, whereas the smallest were more deformed as if they melted over time.
 **[Describe the cavern's floor.] From the crystals was oozing a strange dark sticky oil, dripping and spreading on the cavern's floor.
--> echoing_cave_description
+-> Echoing_Cave_Description
 *[Describe the place.]
 Every surface of this cavern were covered with eerie mushrooms-like plants growing from the cavern's ground to the ceiling into the cracks.
 **[Describe the mushrooms's aspect.] Clusters of small bluish beigns filled the cave, they were slowly moving as if dancing or pumping. It could have been vegetal or animal or mushroom or something else.
@@ -112,18 +112,27 @@ Every surface of this cavern were covered with eerie mushrooms-like plants growi
 While logic screamed at {us_me()} to flee, something made {us_me()} want to stay here. This was it, {We_I(1)} had reached the voice, {We_I(1)} could be satisfied with {childState ? Present:ourselves|myself} and rest.
 **[Describe the voice's aspect.] The echoes whispering alltogether at the same time were creating an hypnotic background buzz.
 **[Describe the mist.] Gradually released into the air, a cloud of spores settled over the room, and its distinctive scent of fresh dirt calmed {our_my(1)} nerves and minds.
--> echoing_cave_description
+-> Echoing_Cave_Description
 *{childState ? Present} [Let Gwen describe.]
 The voice turned into a whisper, then multiple whispers, they wanted {us_me()} to stay forever, it got very scary and was very dangerous as in life-threatening.
 **[Gwen's description of each scary thing in there.] Scary rocks, scary sound, scary liquid.
 **[Gwen's description of each dangerous thing in there.] Dangerous scent, dangerous light, dangerous peacefullness, dangerous plants.
--> echoing_cave_description
-*[Describing this won't help anyone, {We_I(1)} should better write about how to get out.]
-We leave.
+-> Echoing_Cave_Description
+
+*(leaving_echoing_cave)[Describing this won't help anyone, {We_I(1)} should better write about how to get out.]
+- It was more than time to get out of here.
+
+- 
+-> Parchment_Button (w_on) ->
+- {We_I(2)} had lost so much time on this vain quest.
 
 - 
 *[{w_on}]
+- {We_I(2)} had to hope the beast hadn't caught up with us.
+
 - 
+-> Parchment_Button (d_on_surroundings) ->
+-
 
 -> Picking_Direction
 
@@ -140,6 +149,9 @@ We leave.
 
 
 -> DONE
+
+=== Echoing_Cave_Description
+{ -> Echoing_Cave.echoing_cave_description|-> Echoing_Cave.leaving_echoing_cave}
 
 VAR creatureDistance = 8
 
@@ -178,15 +190,15 @@ LIST ExitTypes = Good, Bad1, Bad2
 
 === Good_Exit (direction)
 {shuffle: 
-  - {_DF_to_direction (direction)}, {We_I(1)} saw a strange door inscribed with glyphs. <>
-  - {_DF_to_direction (direction)}, a bone arch made entirely of human femurs. <>
-  - {_DF_to_direction (direction)}, there was a dark, circular hole, dripping with blood. <>
-  - {_DF_to_direction (direction)} was a dried out ford passage. <>
-  - {_DF_to_direction (direction)}, the remains of what was once a monkey bridge ran down a steep cliff. <>
-  - {_DF_to_direction (direction)}, cave paintings of terrifying monsters adorned the rocks. <>
-  - {_DF_to_direction (direction)}, the roots of an underground tree supported the walls, preventing them from collapsing. <>
-  - {_DF_to_direction (direction)}, there was a perfectly dark corridor. <>
-  - {_DF_to_direction (direction)}, some sort of sign standing there was written in a runic language. <>
+  - {_DF_to_direction (direction)}, {We_I(1)} saw a strange door inscribed with glyphs.
+  - {_DF_to_direction (direction)}, a bone arch made entirely of human femurs.
+  - {_DF_to_direction (direction)}, there was a dark, circular hole, dripping with blood.
+  - {_DF_to_direction (direction)} was a dried out ford passage.
+  - {_DF_to_direction (direction)}, the remains of what was once a monkey bridge ran down a steep cliff.
+  - {_DF_to_direction (direction)}, cave paintings of terrifying monsters adorned the rocks.
+  - {_DF_to_direction (direction)}, the roots of an underground tree supported the walls, preventing them from collapsing.
+  - {_DF_to_direction (direction)}, there was a perfectly dark corridor.
+  - {_DF_to_direction (direction)}, some sort of sign standing there was written in a runic language.
   
 }
 
@@ -196,14 +208,14 @@ LIST ExitTypes = Good, Bad1, Bad2
 === Bad_Exit1 (direction)
 
 {shuffle: 
-  - {_DF_to_direction (direction)}, a puddle of goo sat in the middle of the road. <>
-  - {_DF_to_direction (direction)}, from the ceiling stalactites were dripping droplets of a thick fluid. <>
-  - {_DF_to_direction (direction)}, along the staircase was running a dark liquid. <>
-  - {_DF_to_direction (direction)}, rays of light diffracted in a human sized gem pillar. <>
-  - {_DF_to_direction (direction)}, crystal vein starts were visible here and there on the stone's surface. <>
-  - {_DF_to_direction (direction)}, lanterns of some sort wedged into the walls illuminated the path. <>
-  - {_DF_to_direction (direction)}, the tunnel exuded a soothing atmosphere. <>
-  - {_DF_to_direction (direction)}, a forged metal gateway was left ajar, its curious hospitality inviting us to use it. <>
+  - {_DF_to_direction (direction)}, a puddle of goo sat in the middle of the road.
+  - {_DF_to_direction (direction)}, from the ceiling stalactites were dripping droplets of a thick fluid.
+  - {_DF_to_direction (direction)}, along the staircase was running a dark liquid.
+  - {_DF_to_direction (direction)}, rays of light diffracted in a human sized gem pillar.
+  - {_DF_to_direction (direction)}, crystal vein starts were visible here and there on the stone's surface.
+  - {_DF_to_direction (direction)}, lanterns of some sort wedged into the walls illuminated the path.
+  - {_DF_to_direction (direction)}, the tunnel exuded a soothing atmosphere.
+  - {_DF_to_direction (direction)}, a forged metal gateway was left ajar, its curious hospitality inviting us to use it.
 }
 
 + [{We_I(2)} {~decided to go|went|chose to go} {_DF_direction_name (direction)}.]
@@ -212,15 +224,15 @@ LIST ExitTypes = Good, Bad1, Bad2
 === Bad_Exit2 (direction)
 
 {shuffle: 
-  - {_DF_to_direction (direction)} a distant purple light escaped from the tunnel's end. <>
-  - {_DF_to_direction (direction)} a milky fog filled completely the room. <>
-  - {_DF_to_direction (direction)}, small blue spots were floating in all directions. <>
-  - {_DF_to_direction (direction)}, an half-buried antique machine was producing a neverfading buzzing. <>
-  - {_DF_to_direction (direction)}, the smell of the soil once it had been dug tingled my nostrils, moles must have been nesting there. <>
-  - {_DF_to_direction (direction)}, a great crack inside of which a sweet voice was humming a nursery rhyme. <>
-  - {_DF_to_direction (direction)}, patches of strange plants were waving quietly in unison. <>
-  - {_DF_to_direction (direction)}, a bed of wild indigo purslane-like seedlings was covering animal carcasses. <>
-  - {_DF_to_direction (direction)}, upon an old rugged barrier were growing a bunch of mushrooms. <>
+  - {_DF_to_direction (direction)} a distant purple light escaped from the tunnel's end.
+  - {_DF_to_direction (direction)} a milky fog filled completely the room.
+  - {_DF_to_direction (direction)}, small blue spots were floating in all directions.
+  - {_DF_to_direction (direction)}, an half-buried antique machine was producing a neverfading buzzing.
+  - {_DF_to_direction (direction)}, the smell of the soil once it had been dug tingled my nostrils, moles must have been nesting there.
+  - {_DF_to_direction (direction)}, a great crack inside of which a sweet voice was humming a nursery rhyme.
+  - {_DF_to_direction (direction)}, patches of strange plants were waving quietly in unison.
+  - {_DF_to_direction (direction)}, a bed of wild indigo purslane-like seedlings was covering animal carcasses.
+  - {_DF_to_direction (direction)}, upon an old rugged barrier were growing a bunch of mushrooms.
 }
 
 + [{We_I(2)} {~decided to go|went|chose to go} {_DF_direction_name (direction)}.]
