@@ -38,9 +38,8 @@ h2 {
 }
 
 .header {
-    padding-top: 2em;
-    padding-bottom: 2em;
-    color: blue;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 /*
@@ -150,10 +149,10 @@ h2 {
 }
 
 p {
-    margin: 0 140px 0 140px;
+    margin: 20px 140px 20px 140px;
     font-size: 22px;
     color: #441b08;
-    /* line-height: 1.2em; */
+    line-height: 1.2em; 
     font-family: sans-serif;
 }
 
@@ -162,6 +161,7 @@ a {
     color: #b97c2c;
     font-size: 20px;
     line-height: 1.2em;
+    transition: color 0.6s;
     font-family: sans-serif;
     text-decoration: none;
 }
@@ -175,7 +175,8 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: black;
+    transition: color 0.2s;
 }
 
 @media screen and (prefers-reduced-motion: no-preference) {
@@ -316,7 +317,7 @@ img {
 }
 
 .dark a:hover{
-    color: white
+    color: black;
 }
 
 .dark .unclickable{
@@ -336,10 +337,6 @@ img {
 
 .dark #controls [disabled] {
     color: #444;
-}
-
-.dark .end {
-    color: white;
 }
 
 .dark #controls {

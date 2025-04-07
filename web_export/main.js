@@ -33,6 +33,8 @@
 
     var storyContainer = document.querySelector('#story');
     var outerScrollContainer = document.querySelector('.outerContainer');
+    var handContainer = document.querySelector('.hand');
+
 
     // page features setup
     setupTheme(globalTagTheme);
@@ -286,7 +288,7 @@
         var target = previousBottomEdge;
 
         // Can't go further than the very bottom of the page
-        var limit = outerScrollContainer.scrollHeight - outerScrollContainer.clientHeight;
+        var limit = outerScrollContainer.scrollHeight - 0.2*handContainer.clientHeight - outerScrollContainer.clientHeight;
         if( target > limit ) target = limit;
 
         var start = outerScrollContainer.scrollTop;
