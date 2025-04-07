@@ -57,7 +57,7 @@ LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSome
     {
         - KS_Survivors ? Slaughtered: The dismembered, disfigured bodies. The sea of blood. I could not escape the sight of my dead comrades. Nor the memories of the smell. {alter(fear, 1)} {alter(nauseous, 1)}
             ~ KS_Survivors += Dismembered
-        - KS_Survivors !? Slaughtered: I could not shake the sight of how my comrades had been slaughtered in the {KS_Tunnels !? CorewardsRealms:corewards realms{learn(KS_Tunnels, CorewardsRealms)}|abyss} - it made me lightheaded. {learn(KS_Survivors, Slaughtered)} {alter(fear, 1)} {alter(nauseous, 1)}
+        - KS_Survivors !? Slaughtered: I could not shake the sight of how my comrades had been slaughtered in the {KS_Tunnels !? CorewardsRealms:corewards realms{learn(KS_Tunnels, CorewardsRealms)}|abyss}. My ears were ringing and my vision went blurry for a brief moment. {learn(KS_Survivors, Slaughtered)} {alter(fear, 1)} {alter(nauseous, 1)}
     }
 * [I dreaded to come back.]
     {
@@ -151,37 +151,50 @@ LIST KS_Childhood = FirstExode
     ** [The horror hunting me.]
         I thought, at the time, that one of the horrors was on my trail - hungry for my blood, specifically.
         *** [I had killed their own.]
-        I was not a lamb to be slaughtered. And when the rocks gave way to flesh - I had no qualms to keep carving. 
-        -> Parchment_Button (w_on) ->
-        ---- (colony_killed_their_own) Of the horrors we had slain - many died by my hand. {alter (fierce, 2)} {alter (despair, -1)} {alter (fear, -2)}
+            I was not a lamb to be slaughtered. And when the rocks gave way to flesh - I had no qualms to keep carving. 
+            -> Parchment_Button (w_on) ->
+            ---- (colony_killed_their_own) Of the horrors we had slain - many died by my hand. {alter (fierce, 2)} {alter (despair, -1)} {alter (fear, -2)}
             ~ PlayerStates += KilledHorrors
         *** [I had escaped their grasp.]
             I had been away from my team when they murdered them. They are smart creatures, and I still believe they knew that I was missing. {alter (guilt, 1)} {alter (fear, 1)}
-            **** [{w_on}]
-                And that they were looking for me.
+            -> Parchment_Button (w_on) ->
+            And that they were going to make this right.
         *** [They bore a grudge.]
             I had been a leader to my people. I was one of the elder of the city, and I had trained most of our path carvers myself.
             -> Parchment_Button (w_on) ->
             -> colony_killed_their_own
         --- 
         -> Parchment_Button (w_on) ->
-        --- Being personally hunted, by a creature capable of boundless cruelty.
+        --- One of those core-fiend was looking for me. I licked my parched lips.
+        -> Parchment_Button (w_on) ->
+        {
+            - KS_Survivors !? Dismembered: The dismembered, disfigured bodies of my sisters-in-arms. The sea of blood. I could not escape the sight - nor the memories of the smell. {alter (fear, 1)} {alter (nauseous, 1)} {learn (KS_Survivors, Dismembered)}
+            - KS_Survivors !? BonesEaten && KS_Survivors ? Dismembered: The fiends had broken the bones of my sisters-in-arms; sucked the marrow from them, then torn their hearts out to be crushed underfoot. {alter (fear, 1)} {alter (nauseous, 1)} {learn (KS_Survivors, BonesEaten)}
+            - KS_Survivors ? BonesEaten && not Dead_Friends: I had seen what it had done to my sisters-in-arms. I knew what would happen to me, if I was caught. {alter (fear, 1)} {alter (nauseous, 1)}
+                -> Dead_Friends ->
+            - else: I couldn't get Onyx, Yagvida, Najla and Eun-Jo out of my mind. They did not deserve such a fate. {vomited >= 1:My mouth, still full of the taste of stomach acid.} Felt like cotton was wrapped around my head.
+//                -> Colony_Scary_Thought ->
+        }
         
     ** [My own death.]
         Scenes of my own death, of my parents' death, echoed on the stone walls as if to torment me. {alter (fear, 2)}
 *[{d_on_surroundings}]
     I had played, decades ago, in these streets. It had always been comfortingly warm down here, with all the dredgers, the smelters, the furnaces. {alter(nostalgia, 1)} {alter (despair, -1)}
     ** [A peaceful life.]
-    ** [A time long gone.]
-    ** [I would rather forget.]
-    In that moment, as thoughts of my childhood, of simpler times before the crawling horrors would come 
-    --
+    Before the crawling horrors came - when the water still flowed through the cave. These were peaceful times. {alter (nostalgia, 2)} {alter (despair, -2)}
     -> Parchment_Button (w_on) ->
+    ** {cold >= 2} [A time long gone.]
+    These times were long gone. I remember catching and stopping myself. My first concern, of course, had to be my survival.
+    -> Parchment_Button (w_on) ->
+    And nostalgia would not get me moving. It could only slow me down. {alter (nostalgia, -3)} {alter (cold, 2)}
+    ** [I would rather forget.]
+    In that moment, as I was trying to leave - thoughts of my childhood came swarming to me - of simpler times before the crawling horrors.
+    -> Reminisce ->
     -- I was descending, towards the city center. I needed to make my way to the condemned tunnels. {alter (hope, 1)}
     ** [Towards the surface.]
         The ones that lead up - to the surface world. <> -> no_one_knew
-    ** [Towards the unknown.]
-        After sixty years, they might as well be uncharted territory. <>
+    ** [Into the unknown.]
+        After seventy years, they might as well be uncharted territory. <>
         --- (no_one_knew) No one could say what we'd find up there - or how dangerous it would be.
     ** [I hoped the bulkhead still worked.]
         I could only hope the heavy bulkhead could still be opened, {PlayerStates ? HurtHand: especially with my hand in that state|even by someone my age}. {alter (old, 1)}
@@ -204,43 +217,76 @@ LIST KS_Childhood = FirstExode
 -
 -> Parchment_Button (w_on) ->
 
-- My weary mind drifted away as I walked; my legs tired, my feet in pain. 
+- My weary mind drifted away as I walked. I had hoped to rest, I had hoped to recover.
 
-* [The life we used to live here.]
-Before the crawling horror came, when the water was still flowing through the cracks of our caves, life was pretty peacefull.{alter (nostalgia, 1)}
+LIST BodyPartsPain = Back, Legs, Heart
 
--
--> Parchment_Button (w_on) ->
-
-- The creeping thought of that beast never-ending hunt for me just wouldn't leave my head.
-
--> Colony_Scary_Thought ->
-
-- To add insult to injury, my body was in terrible pain.
-*[my back]
-The small amount of provisions I managed to pack for this last minute trip was enough to tire my old frame out.
-*[my legs]
-I was hoping that the varicose veins in my right leg and my swollen feet wouldn't force me to take breaks.
-*[my heart]
-I was worried this used heart of mine would have trouble keeping up the pace.
+* [My back hurt the most.]
+    Decades of carrying heavy equipment and large backpacks had taken a toll on my body. My back hurt me often, especially the lower back - near the kidneys.
+    ~ BodyPartsPain += Back
+* [My legs brought me pain.]
+    I was hoping that the varicose veins in my right leg and my swollen feet wouldn't force me to take breaks.
+    ~ BodyPartsPain += Legs
+* [My heart was beating hard.]
+    I was worried this old heart would simply give up. I breathed deeply.
+    ~ BodyPartsPain += Heart
 
 -
 -> Parchment_Button (w_on) ->
 
-- I concentrated on lifting my head up and looking at my surroundings.
-*[my workplace]
-The main building was still standing, but the usual racket around it had died down. -> Workplace
-*[the ruins]
-The ancillary dwelling, public conveniences, and municipal sculptures that had been erected here by skilled craftswomen were all reduced to dust, eroded, trampled down. -> City_Ruins
-*[the playground]
-Seeing the empty, dilapidated children's playground chilled my blood whilst it drew me to it. -> Playground
+- I did not have much time - but as I was crossing through, I could linger in one location for a moment - as I caught my breath. # IMAGE: Images/grandma_serious.PNG
+*[I'd go to the headquarters.]
+    The headquarters for the path carvers and the explorers was still standing - but the usual racket around it had died down. It had been so lively in the past. -> Workplace
+*[I kept pace through the city center.]
+    The ancillary dwellings, public convenience, and municipal sculptures that had been erected here by skilled craftswomen had been reduced to dust - eroded.
+    -> Parchment_Button (w_on) ->
+    Trampled into the ground by the stompers. -> City_Ruins
+*[I visited the playground.]
+    I decided to visit the playground one final time. Empty and destroyed as it was - it chilled my blood. But drew me in. -> Playground
+
+=== Reminisce
+
+- (reminisce_top)
+
++ [{r_on}]
+{stopping:
+    - I smile now, thinking of how we would take long walks on the banks of the inverted lake, with Onyx and Eun-Jo. -> reminisce_top
+    - The others didn't really like going near the lake. It was too strange for them. The black water dripping from the floor, pooling on the ceiling. -> reminisce_top
+    - One time, coming back - I'll never forget how we saw Yadviga, all the way up the great furnace, with her bare feet and her much too big miner's vest. -> reminisce_top
+    - She'd always been like a sort of wild animal. Why was she scared of the lake, but not of a fifteen meter drop? -> reminisce_top
+    - And, by the goddesses, the bright smile on Najla's face when she'd bring us jellyfish tarts. -> reminisce_top
+    - She had those big incisives, with a gap between them; she looked a little like a rabbit. And she was always laughing harder than everyone else. -> reminisce_top
+    - I thought, in that moment of strife, it was better to forget. -> reminisce_top
+    - But the stupid songs we'd sing as children, in the light of the forgelamps still burned bright in my soul. -> reminisce_top
+    - It was too painful - it still is. Those memories - when I'd seen them murdered, horribly mutilated, just a few hours earlier. {learn(KS_Survivors, Slaughtered)} -> Collect_Yourself
+    - That's why I had pushed all these feelings to the depths of my core, my heart. I had no time for softness. Only survival. Only escape. -> reminisce_top 
+    - Please forgive this long parenthesis. I think I needed to talk about them for a while. -> reminisce_top
+    - I think I wanted their memory to survive, in a way.
+}
+    -> Parchment_Button (w_on) -> 
+    Thank you for reading. Let me continue.
+    -> Parchment_Button (w_on) -> 
+    ->->
+* [{m_on}]
+{reminisce_top == 1:I thought - I'd have time later for memories. Once i was out of there, and safe.|But - that is quite enough for now.}
+    -> Parchment_Button (w_on) ->
+    ->->
+    
+= Collect_Yourself
+
+* [{c_on}]
+-
+* [{c_on_again}] # IMAGE: Images/grandma_sad.PNG
+- 
+* [{dots_on}]
+- -> reminisce_top
 
 === Hard_Having_Faith
 
 It was hard to have faith - to truly believe that going outside would save us now. Weren't we only delaying the inevitable?
 
 * [Perhaps the goddesses were angry.]
-    Perhaps the goddesses were angry at us. Perhaps the sky-flood had been the result of their ire.
+    Perhaps the goddesses were angry at us. Perhaps the sky-flood had been the result of their ire. # IMAGE: Images/goddess.PNG
     ~ PlayerStates += GoddessesAngry
     ** [{w_on}]
     --    And... perhaps the fiends and the creatures that hunted us were also their doing.
@@ -335,7 +381,7 @@ It was hard to have faith - to truly believe that going outside would save us no
 
 === Heard_Screams
 
-That was when I heard the screams.
+That was when I heard the screams. Unmistakable. The core-fiend was closing in.
 
 /*
 * [These monstrous screams.]
@@ -345,7 +391,7 @@ That was when I heard the screams.
 
 -> Parchment_Button (w_on) ->
 
-- I hurried my step - speeding through the ruins, past the old playground.
+- {BodyPartsPain ? Legs:Although my leg hurt, |}I hurried my step - speeding through the ruins, past the old playground.
 
 -> Parchment_Button (w_on) ->
 
@@ -353,17 +399,32 @@ That was when I heard the screams.
 
 -> Parchment_Button (w_on) ->
 
-- Until I reached the town's exit, towards the echoing caverns and the old galleries.
+- Until I reached the town's exit, towards the echoing halls and the ancient galleries.
 
 -> Parchment_Button (w_on) ->
 
-- The barricades had been dismantled, the big metal bulkhead forced open; it was the way back to the surface.
+- (screams_exit_the_colony) The barricades had been dismantled, the big metal bulkhead forced open. It was the way back to the surface. # IMAGE: Images/cavemouth_dark.PNG
 
+{
+    - PlayerStates !? UnchartedTerritory:
+        -> Parchment_Button (w_on) ->
+        It was also uncharted territory for me. Not since the first exode had I been through these parts.
+}
+
+* {fierce >= 3} [My stride was fierce.]
+    I was determined. {PlayerStates ? Pious:This was my mission, my fate, as the goddesses ordained.|This was my mission, maybe even my fate.} {alter (fierce, 1)}
+* {hope >= 3} [Hope carried me forward.]
+    Hope gave me the strength to step into the unknown. {PlayerStates ? HopesSomeoneSurvived:If anyone was still alive - I would find them. Save what was left.} {alter (hope, 1)}
+* {old <= 4} [Even old as I was...]
+    Even old as I was, my body had still carried me through. I was still alive. {PlayerStates ? Pious:The goddesses were, perhaps, still watching over me.} {alter (old, -1)}
+* {cold >= 3} [Maybe it was time.]
+    Maybe it was time to leave this all behind me - end this chapter of my life. {alter (cold, 1)}
+* [I stepped hesitantly into the dark.]
+    I stepped hesitantly into the darkness. {alter (hope, -1)}
+-
 -> Parchment_Button (w_on) ->
 
-- It was also uncharted territory for me. Not since the first exode.
-
-- -> Lost_Child
+-> Lost_Child
 
 === Dead_Friends
 
@@ -379,7 +440,7 @@ VAR vomited = 0
         ~ PlayerStates += VomitOnFace
     }
     -> Parchment_Button (w_on) ->
-    I took a moment, falling to my knees, to breathe deeply and center myself as much as I could.
+    I took a moment, falling to my knees, to breathe deeply and center myself as much as I could. 
     ** {hope >= 1} [I would not meet the same fate.]
             I would not meet the same fate. And I knew others had survived as well - I knew it, I hoped, I longed for it. {alter (hope, 3)} {alter (fear, -1)} {alter (despair, -3)}
             ~ PlayerStates += HopesSomeoneSurvived
@@ -391,7 +452,7 @@ VAR vomited = 0
         Something broke inside of me. My ears started ringing, my vision went blurry for a moment; then I felt far away from my own self, from my own mind.
         -> Parchment_Button (w_on) ->
         When I stood back up, I felt an eery sense of calm. I did not care anymore. {alter(cold, 3)} {alter (guilt, -2)}
-    ** (could_not_get_grip) [But I could not get a grip.]
+    ** (could_not_get_grip) [But I could not get a grip.]  # IMAGE: Images/grandma_blood.PNG
         But I could not get a grip. I was trembling. Tears started flowing uncontrollably. I don't know how long I spent there. I curled myself into a ball, and wept. {alter (despair, 3)} {alter (hope, -3)} {alter (fierce, -3)}
         -> Parchment_Button (w_on) ->
         When I finally managed to stand up, I felt exhausted. My entire body was hurting. I had never felt so old and broken. {alter (old, 2)}
@@ -417,11 +478,13 @@ VAR vomited = 0
 - (top)
 + [{d_on}]
 {stopping:
-    - The large storefront smoothed out of a flawless granite proudly displayed “a quareer within the quarry” as an invitation to visit it one last time. -> top
-    - Guided by my memories, I crossed the parking lot where the derelict dredgers were laying dormant. -> top
-    - Wandering around the now-empty offices that used to be busy at all hours of the day and night troubed me more than I thought it would. -> top
-    - It was in this very hall that I took my vows to serve in the community as a carver of ways, a seeker of trajectories. -> top
-    - As I was passing by the service exit, I came across a pickaxe with a lightweight carbon handle, thought it might come in handy and picked it up. {i_get (Pickaxe)}
+    - To my left, I passed the miner's office. The imposing frontpiece, carved out of flawless granite, proudly claimed “a quareer in the quarry.” -> top
+    - I'd always chuckle a little a the pun. It wasn't very funny, but it was exactly my ex-wife's humor. -> top
+    - My steps were entirely automatic. No thoughts needed - I crossed the parking lot, where the dredgers were now laying dormant. -> top
+    - I crossed through the halls of the path-carvers - seeing the machines, the desks, the changing rooms, the technical locale - where we'd inspect and refurbish the equipment. The lab, the planning and meeting room. 
+    - It would be so busy, at all hours of the day and the night. It was so unnerving, so strange to see it all deserted. -> top
+    - It was in this very building that I took my vows to serve in the community as a carver of ways. A seeker of trajectories. A link between present and future. -> top
+    - As I was passing by the service exit, I came across a pickaxe - lightweight carbon handle model. I didn't even think before latching it onto my backpack, replacing the one I'd lost earlier. {i_get (Pickaxe)}
 }
     ** [{w_on}] -> Exiting_Colony
 * [{m_on}]
@@ -430,18 +493,23 @@ VAR vomited = 0
 
 === City_Ruins
 
+# IMAGE: Images/goddess.PNG
+
 - (top)
 
 + [{d_on}]
 {stopping:
-    - I used to sleep in those simple yet charming habitations when I was too tired to get home after my shift. -> top
-    - Further on, the half-face of a gem goddess stared at me with pity and it was I who decomposed before her. -> top
-    - I felt the pieces of myself crack and fall at her carefully crafted clay feet. -> top
-    - As I was leaving, I contemplated the crumbs of the bench on which I had kissed my first lover, Mariana. -> top
-    - {i_get (Trenchcoat)}  Burried under the rubbbles, I dug up Mariana's trenchcoat! Could she have made it out?
+    - I used to sleep here, when I was too tired to get home after my shift. -> top
+    - Further on was one an idol of Adnyenka, the gem-goddess. She'd bless us before our expeditions. -> top
+    - I felt so small in front of her. {PlayerStates ? Pious: Even at a time like this, I took a moment to kneel in front of her, and pray.|In that moment - I felt myself crumble and fall to the ground before her. I prayed - desperately, I prayed. {learn (PlayerStates, Pious)}}
+    - There was no answer. No sign, and no augury. I did not need one. -> top
+    - As I was leaving, I contemplated the shattered pieces of the town-square's bench. -> top
+    - For a brief moment, I was nineteen again, kissing Mariana, getting high on her scent, digging greedy fingers in her auburn hair. -> top
+    - I remembered how bright she shined, in that trenchcoat she'd always wear. I closed my eyes, hard, trying to make the thoughts and the tears go away - as I am doing right now. -> top
+    - In the rubbles - I found a strange, beige piece of waterproof fabric. Surely, I thought - this wasn't hers. I wondered - and still wonder. Could she have survived? {learn (PlayerStates, HopesSomeoneSurvived)}
 }
     ** [{w_on}] -> Exiting_Colony
-* [{m_on}]
+* {top >= 2} [{m_on}]
 
 - -> Exiting_Colony
 
@@ -451,42 +519,35 @@ VAR vomited = 0
 
 + [{d_on}]
 {stopping:
-    - I used to play there when we first arrived seventy years ago. -> top
-    - I remember the 6 years-old me waiting for the work to be finished, standing in the legs of the craftswomen who were running out of patience. -> top
-    - Later, the teenager I was smoked calming herbs high up the kids' castle roof. -> top
-    - As wise adults, my digging team and I liked eating out here during lunchbreaks, just outside the mainquarters. -> top
-    - {i_get (Rope)}  Even though I knew it was best to leave the past in the past, I couldn't resist grabbing the skipping rope that was lying around, and took it with me.
+    - Seventy years ago, I'd play in that sandpit; I'd swing on that swing. They had been built for me and the other children my age. -> top
+    - The swingset was just a repurposed harness - tied to crudely weld steel beams. But for a 6 year old exiled underground, it was everything. -> top
+    - I remember waiting for the work to be finished, bothering the craftswomen, clinging to their legs. It's one of my oldest memories. -> top
+    - Many years later, we would get together on top of the upcycled jungle gym, with Onyx and Najla, to smoke the mushroom pipes at night. -> top
+    - Much later still - my team and I liked to eat here, during lunchbreaks. It wasn't far from the mainquarters, and we liked it. -> top
+    - Loved being surrounded by the kids and the families coming to play here. It reminded us why we did what we did. -> top
+    - Why we'd always go deeper, risk our lives in the depths. -> top
+    - I couldn't resist grabbing a skipping rope that laid in the rubbles. Sentimental, I know. {i_get (Rope)}
 }
     ** [{w_on}] -> Exiting_Colony
 
-* [{m_on}]
+* {top >= 2} [{m_on}]
 
 - -> Exiting_Colony
 
 === Exiting_Colony ===
 
-- Actually, being here meant I had reached the end of the colony.
-+[into the depths]
-By the next tunnels I'd be in uncharted territory.
-+[ending a chapter]
-It was more than time to bid farewell to my past life.
-+[I did it]
-It made me regain a little hope and faith in my body's abilities.
-++ [{w_on}]
-Since it had carried me this far, I could go all the way. {alter (hope, 1)}
+- My steps had led me to the end of the city's territory, near the massive bulkhead leading to the ancient galleries and the echoing halls. # IMAGE: Images/cavemouth_dark.PNG
 
--
-* [{w_on}]
+-> Parchment_Button (w_on) ->
 
-
--> Lost_Child
+-> Heard_Screams.screams_exit_the_colony
 
 === Colony_Scary_Thought
 
 - (top)
-+ [{d_on}]
++ [{l_on_thought}]
 {stopping:
-    - I just wanted to stop thinking about it. -> top
+    - I knew I should have stopped thinking about this - that I was only hurting myself; but I felt  -> top
     - In fact, I better had to, or else it would hurt my psyche. -> top
     - Too late, I was picturing that thing feasting on my loved ones over and over again. {alter(despair, 3)}
 }

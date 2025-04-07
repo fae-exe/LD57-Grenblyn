@@ -32,6 +32,11 @@ VAR l_on_feeling = "Linger on this feeling →"
 
 VAR r_on = "Remember →"
 
+VAR c_on = "Collect yourself →"
+VAR c_on_again = "Just a moment →"
+
+VAR dots_on = "... →"
+
 LIST Items = Trenchcoat, Rope, Pickaxe, FlintKnife
 LIST CharacterStates = NotFound, Absent, Present, Dead
 
