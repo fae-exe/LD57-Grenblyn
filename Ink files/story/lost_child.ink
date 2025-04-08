@@ -165,8 +165,8 @@ I went back through the tunnel first and waited for her. She came out a few minu
 {childState ? Present:I took the opportunity to teach Gwen|I was trying to recall myself} how to follow the water trails, even when its furrows were then completely dry.
 *[I moved at random]
 {childState ? Present:Gwen was giving me a hard time as she walked briskly but I think I surprised her by keeping up with her despite my age.|I had completely lost myself in my thoughts, about my lost ones, my purpose, and I could only hope that chance would be kind to me.}
-#IMAGE: Images/Gwen_Signed_Language.PNG
--
+
+- #IMAGE: Images/Gwen_Signed_Language.PNG
 
 
 -> Echoing_Cave

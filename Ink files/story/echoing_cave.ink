@@ -62,9 +62,9 @@ Yet another tunnel mouth but narrower.
 {We_I(2)} arrived at an empty cave hall.
 *[{We_I(2)} went straight ahead]
 {We_I(2)} arrived at an empty cave hall.
--> Gwen_Starfish ->
+--> Gwen_Starfish ->
 
--
+
 -> Parchment_Button (w_on) ->
 - {We_I(2)} had the heavy feeling {childState ? Present: we were|I was} going deeper an deeper into the unknown.
 *[{We_I(2)} took left]
