@@ -96,7 +96,7 @@ It was a mistake.
 - Nobody human.
 -> Parchment_Button (d_on_surroundings) ->
 - The echoing dead end, ink drawing.
-#IMAGE: 
+#IMAGE: Images/echoing_deadend.PNG
 # AUDIOLOOP: Sounds/sad1.mp3
 - (echoing_cave_description)
 *[Describe the voice.]
@@ -360,7 +360,7 @@ The rumble of its body digging its way to {us_me()} through the narrow tunnels r
 - ->->
 
 = Screams_In_Distance
-
+# AUDIOLOOP: Sounds/idea3.mp3
 {We_I(2)} could hear the fiend's screams in the distance. It was hunting {us_me()}.
 
 + [{w_on}]
@@ -374,7 +374,7 @@ A fine stone dust was still hanging in the air where the sides of the cavern wer
 - ->->
 
 === Exit_Echoing_Caves
-
+# AUDIOLOOP:
 {We_I(2)} finally managed to exit this labyrinth.
 * [{w_on}]
 
