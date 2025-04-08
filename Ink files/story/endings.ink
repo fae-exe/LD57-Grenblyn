@@ -116,10 +116,10 @@
             The only thing I know to do. Keep moving forward. Keep carving a path to the future.
             -> Parchment_Button (w_on) ->
             Even sad as I feel - I will not wait for my final breath lying down.
-- { -> feel_top |}
+-
 + [{w_on}]
 
-- {We_I(2)} took a few steps on the clifftops. Everywhere, you could see the traces of the great skyflood.
+- {We_I(2)} took a few steps on the clifftops. Everywhere, you could see the traces of the great skyflood. # AUDIO: Sounds/echoes1.mp3
 * (outside_buildings) [The buildings.]
     Like the buildings, elongated, grotesquely deformed, as if they had been clay in the hands of a child.
 * [The vegetation.]
@@ -129,7 +129,7 @@
 - 
 + [{w_on}]
 
-- I made my way to the humble cabin{outside_buildings:, now three stories tall|, now grotesquely stretched towards the sky}, from which I now write.
+- {We_I(2)} made my way to the humble cabin{outside_buildings:, now three stories tall|, now grotesquely stretched towards the sky}, from which I now write.
 -> Gwen_Leech ->
 -> Parchment_Button (w_on) ->
 
@@ -167,7 +167,8 @@ I hope someone, anyone finds this.
         Do not let fear, death or horror break your spirit.
 - For now - I must stop writing. {childState: I hear Gwen is calling my name, and} I must find something to eat. 
 -> Parchment_Button (w_on) ->
-Farewell, and Adnyenka bless us.
+Adnyenka bless us.
+Farewell. # CLASS: end
 
 -> Parchment_Button (end_on) ->
 
@@ -211,6 +212,5 @@ Could Mariana still live? I think back to this piece of fabric I found in the ru
 
 {
     - childState ? Present: #IMAGE: Images/Gwen_Leech.PNG
-    - childState !? Present:
 }
 ->->
