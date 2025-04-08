@@ -110,35 +110,34 @@ The water had become rare and our water sources were infested with beasts.
 - (talking_to_gwen)
 * [I needed to know who she was.]
 I asked her: "How about telling me who you are, kiddo?"
-**[She gave me her name]
+ **[She gave me her name]
 She traced her name with her finger, in a mix of dust and blood the word GWEN appeared before me.
-** [She showed me how she escaped]
+ **[She showed me how she escaped]
 She started to mimic what I recognized being the earthquake of a few days ago, she imitated a strong woman with a baby (her mother?) giving her orders, she ran, arrived here and hid, she waited for a long time...
-***[...]
+  ***[...]
 <br>
 She paused.
-****[...]
+   ****[...]
 <br>
 When she restarted mimicing she did the strong woman again, her mother, she was not here, she was dead...
-**[She drew me her tale]
+ **[She drew me her tale]
 She frowned as she started drawing herself with angry eyes, big arms and a sword killing the creature laying dead next to us, and another, and a couple more, until she would paint herself killing dozen of atrocities (she even used the creature blood to illustrate better), on the ground of the cave with the tip of her flint.
 --
-**[{w_on}]
+ **[{w_on}]
 -- She burst into silent tears. <>
-
 -> Talking_To_Gwen
 
 * [I wanted to comfort her.]
 I stammered: "It's okay now... we're together. We'll make it out."
 # IMAGE: Images/gwen_headpat.PNG
-**[She stayed muted.]
+ **[She stayed muted.]
 She looked at me funny, before nodding unconvincingly at what I said.
-**[She trusted me.]
+ **[She trusted me.]
 She lend me her only hand, as I shook it I knew I made her a promise.
-**[She regained faith.]
+ **[She regained faith.]
 She's put herself back together and smiled fiercly at me.
 --
-**[{w_on}]
+ **[{w_on}]
 -- (flint_knife) She grabbed her flint knife and put it in her pocket. <>
 -> Talking_To_Gwen
 
@@ -166,9 +165,8 @@ I went back through the tunnel first and waited for her. She came out a few minu
 {childState ? Present:Gwen was giving me a hard time as she walked briskly but I think I surprised her by keeping up with her despite my age.|I had completely lost myself in my thoughts, about my lost ones, my purpose, and I could only hope that chance would be kind to me.}
 
 -
-* [{w_on}]
--
--> Echoing_Caves
+
+-> Echoing_Cave
 
 -> DONE
 
