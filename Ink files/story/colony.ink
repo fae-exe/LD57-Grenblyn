@@ -6,7 +6,7 @@
 
 LIST KS_Survivors = Slaughtered, Dismembered, BonesEaten // this is to track the player knowledge of the other survivors' fate
 LIST KS_Tunnels = LeadsToCity, Familiar, DugThemMyself, CorewardsRealms, PathCarver, CityInRuins, UnchartedTerritory
-LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSomeoneEscaped, EscapeAtAnyCost, HurtHand, GoddessesAngry, Pious, KilledHorrors
+LIST PlayerStates = (BloodiedFace), HopesSomeoneSurvived, VomitOnFace, KnowsSomeoneEscaped, EscapeAtAnyCost, HurtHand, GoddessesAngry, Pious, KilledHorrors, MarianaHope
 
 * [I was shaken.]
     They had been slaughtered - never had a chance. My hands shook uncontrollably. {alter(fear, 1)} {alter(nauseous, 1)} {alter (despair, 1)}
@@ -506,7 +506,7 @@ VAR vomited = 0
     - As I was leaving, I contemplated the shattered pieces of the town-square's bench. -> top
     - For a brief moment, I was nineteen again, kissing Mariana, getting high on her scent, digging greedy fingers in her auburn hair. -> top
     - I remembered how bright she shined, in that trenchcoat she'd always wear. I closed my eyes, hard, trying to make the thoughts and the tears go away - as I am doing right now. -> top
-    - In the rubbles - I found a strange, beige piece of waterproof fabric. Surely, I thought - this wasn't hers. I wondered - and still wonder. Could she have survived? {learn (PlayerStates, HopesSomeoneSurvived)}
+    - In the rubbles - I found a strange, beige piece of waterproof fabric. Surely, I thought - this wasn't hers. I wondered - and still wonder. Could she have survived? {learn (PlayerStates, HopesSomeoneSurvived)} {learn (PlayerStates, MarianaHope)}
 }
     ** [{w_on}] -> Exiting_Colony
 * {top >= 2} [{m_on}]

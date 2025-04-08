@@ -27,7 +27,7 @@ INCLUDE chrys_debug.ink
 
 // SET TO FALSE WHEN MAKING THE WEB EXPORT
 
-VAR debug = false
+VAR debug = true
 
 {debug: -> Debug}
 

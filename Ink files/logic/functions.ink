@@ -33,6 +33,22 @@
             ~ return "{childState ? Present:we|I}"
     }
     
+=== function We_I_are (n)
+    {
+        - n >= 2:
+            ~ return "{childState ? Present:We are|I am}"
+        - else:
+            ~ return "{childState ? Present:we are|I am}"
+    }
+    
+=== function We_I_were (n)
+    {
+        - n >= 2:
+            ~ return "{childState ? Present:We were|I was}"
+        - else:
+            ~ return "{childState ? Present:we were|I was}"
+    }
+    
 === function us_me ()
     ~ return "{childState ? Present:us|me}"
     
