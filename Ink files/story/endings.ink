@@ -130,6 +130,7 @@
 + [{w_on}]
 
 - I made my way to the humble cabin{outside_buildings:, now three stories tall|, now grotesquely stretched towards the sky}, from which I now write.
+-> Gwen_Leech ->
 -> Parchment_Button (w_on) ->
 
 I hope someone, anyone finds this.
@@ -204,3 +205,12 @@ Could Mariana still live? I think back to this piece of fabric I found in the ru
     May the goddesses be kinder to you and your flock than they were to us.
 
 - -> END
+
+//GWEN SKRIBBLES
+=== Gwen_Leech
+
+{
+    - childState ? Present: #IMAGE: Images/Gwen_Leech.PNG
+    - childState !? Present:
+}
+->->

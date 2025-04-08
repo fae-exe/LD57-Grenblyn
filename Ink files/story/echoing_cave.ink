@@ -61,6 +61,7 @@ Yet another tunnel mouth but narrower.
 {We_I(2)} arrived at an empty cave hall.
 *[{We_I(2)} went straight ahead]
 {We_I(2)} arrived at an empty cave hall.
+-> Gwen_Starfish ->
 
 -
 -> Parchment_Button (w_on) ->
@@ -176,6 +177,15 @@ LIST ExitTypes = Good, Bad1, Bad2
 <- Exit (pop_random (ExitTypes), pop_random (Directions))
 
 -> DONE
+
+//GWEN SKRIBBLES
+=== Gwen_Starfish
+
+{
+    - childState ? Present: #IMAGE: Images/Gwen_Starfish.PNG
+    - childState !? Present:
+}
+->->
 
 === Exit (type, direction)
 {
@@ -377,5 +387,6 @@ A fine stone dust was still hanging in the air where the sides of the cavern wer
 # AUDIOLOOP:
 {We_I(2)} finally managed to exit this labyrinth.
 * [{w_on}]
+
 
 -> Elevator_Arrival

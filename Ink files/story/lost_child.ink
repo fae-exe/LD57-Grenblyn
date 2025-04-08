@@ -121,6 +121,7 @@ She paused.
 <br>
 When she restarted mimicing she did the strong woman again, her mother, she was not here, she was dead...
  **[She drew me her tale]
+ #IMAGE: Images/Gwen_The_Killer.PNG
 She frowned as she started drawing herself with angry eyes, one big arm and a sword killing the creature laying dead next to us, and another, and a couple more, until she would paint herself killing dozen of atrocities (she even used the creature blood to illustrate better), on the ground of the cave with the tip of her flint.
 --
  **[{w_on}]
@@ -164,8 +165,9 @@ I went back through the tunnel first and waited for her. She came out a few minu
 {childState ? Present:I took the opportunity to teach Gwen|I was trying to recall myself} how to follow the water trails, even when its furrows were then completely dry.
 *[I moved at random]
 {childState ? Present:Gwen was giving me a hard time as she walked briskly but I think I surprised her by keeping up with her despite my age.|I had completely lost myself in my thoughts, about my lost ones, my purpose, and I could only hope that chance would be kind to me.}
-
+#IMAGE: Images/Gwen_Signed_Language.PNG
 -
+
 
 -> Echoing_Cave
 
@@ -173,5 +175,3 @@ I went back through the tunnel first and waited for her. She came out a few minu
 
 === Talking_To_Gwen 
 { -> Lost_Child.talking_to_gwen|-> Lost_Child.leaving_gwen_cave}
-
-
