@@ -54,8 +54,8 @@ Yet another tunnel mouth but narrower.
 
 -
 -> Parchment_Button (w_on) ->
-#IMAGE: Images/cavemouth_blue.PNG
 - {We_I(2)} were hearing the voice echoing on the walls uninterruptly.
+#IMAGE: Images/cavemouth_blue.PNG
 *[{We_I(2)} took left]
 {We_I(2)} arrived at an empty cave hall.
 *[{We_I(2)} took right]
