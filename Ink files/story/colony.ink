@@ -536,7 +536,7 @@ VAR vomited = 0
 
 === Exiting_Colony ===
 
-- My steps had led me to the end of the city's territory, near the massive bulkhead leading to the ancient galleries and the echoing halls. # IMAGE: Images/cavemouth_dark.PNG
+- My steps had led me to the end of the city's territory, near the massive bulkhead leading to the ancient galleries and the echoing halls.
 
 -> Parchment_Button (w_on) ->
 
