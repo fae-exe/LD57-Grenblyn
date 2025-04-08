@@ -50,10 +50,10 @@
     Nothing would stop me now. The button resisted, then yielded with a satisfying click. {alter (fierce, 1)}
 * [I pressed the button shakily.]
     My hand was shaking as I pressed the button. Fear, apprehension, anticipation all swirled around me. {alter (fear, 1)}
-* {child_trusts_me >= 3} [The child pressed the button before I did.]
+* {childState ? Present} [The child pressed the button before I did.]
     But it was Gwen that pressed the button, even before I could. {alter (hope, 1)}
     ** [{w_on}]
-        They looked at me, their eyes completely hidden by their messy bangs. I smiled warmly.
+        She looked at me, her eyes completely hidden by her messy bangs. I smiled warmly.
 -
 
 * [{w_on}]
@@ -74,14 +74,14 @@
 * {cold >= 3} [I was lost in my thoughts.]
     In that moment, I was lost in my thoughts - almost in a sort of trance. Nothing would have disturbed me. {alter (cold, 1)}
 * {fierce >= 3} [I grinned wildly.]
-    I grinned wildly, looking at {childState ? Present:Gwen|the light behind the door} - we had won. {alter (fierce, 1)}
+    I grinned wildly, looking at {childState ? Present:Gwen|the light behind the door} - {We_I(1)} had made it. {alter (fierce, 1)}
 * [I waited in silence.]
     I waited in silence.
 * {child_scared_of_me <= 3 && childState ? Present} [I put a hand on the child's shoulder.]
     I put a reassuring hand on Gwen's shoulder. "Fear not." {alter (child_trusts_me, 1)}
     -- (elevator_exit_child_relaxes)
     ** [{w_on}]
-        Their tension seemed to dissipate. Their presence by my side brought me comfort and hope. {alter (hope, 1)}
+        Her tension seemed to dissipate. Her presence by my side brought me comfort and hope. {alter (hope, 1)}
 * {child_trusts_me >= 5 && childState ? Present} [Gwen huddled to me for comfort.]
     Gwen huddled to me for comfort, and I held them close. {alter (child_trusts_me, 1)}
     -> elevator_exit_child_relaxes
@@ -182,6 +182,15 @@ When the doors opened, a violent, exulting light brought {us_me()} to {our_my(1)
 
 + [{w_on}]
 
-- Gwen was looking at it with a solemn look on their face. They seemed to know on instinct that it was something important.
+- Gwen was looking at it with a solemn look on her face. She seemed to know on instinct that it was something important.
+
+->->
+
+=== Elevator_Picture
+
+{
+    - childState ? Present: # IMAGE: Images/elevator_us.PNG
+    - childState !? Present: # IMAGE: Images/elevator_alone.PNG
+}
 
 ->->
