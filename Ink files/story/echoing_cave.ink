@@ -2,6 +2,7 @@
  -
 
 -> Parchment_Button (w_on) ->
+#IMAGE: Images/cavemouth_blue.PNG
 - Suddently, a familiar voice caught my attention.
 *[It was ex-lover's voice.]
 My heart missed a beat when I heard Mariana's voice calling my name.
@@ -289,7 +290,7 @@ LIST ExitTypes = Good, Bad1, Bad2
 // pas besoin de check si on se rapproche de la sortie, mais tu peux rajouter du fluff pour montrer qu'on est en train de se perdre
 - {stopping: 
 - A dark, disturbing wind was blowing from the depths.
-- The echoing voices had caught up with us and pestered us.
+- The echoing voices had caught up with us and pestered us. #IMAGE: Images/cavemouth_red.PNG
 //- {We_I(2)} felt as if the earth was going to crush {us_me()}.
 //- {We_I(2)} were feeling the darkness pulling on {our_my(1)} bones.
 - A {~dooming|suffocating|paralyzing|heavy|unpleasant} {sensation|feeling|thought|doubt|idea} {harassed|haunted|took hold of|came over|overwhelmed} {us_me()}.
