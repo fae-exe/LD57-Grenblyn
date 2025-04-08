@@ -4,7 +4,7 @@
 
 - (feel_top)
 
-* {hope >= 4 && despair < 6} [{I felt relieved.|I also felt relieved.}]  #AUDIO: Sounds/ending1.mp3
+* [{I felt relieved.|I also felt relieved.}]  #AUDIO: Sounds/ending1.mp3
     I felt a wave of relief. Maybe even something like happiness. {childState ? Present:I looked at Gwen, and she was smiling back at me.}
     ** {childState ? Present} [I wasn't alone.]
         I am not alone. Although there is still so much to do, I will not face it by myself. I must be there for Gwen - raise her, build a new world for her.
@@ -35,7 +35,7 @@
     ** {cold >= 3 && hope <= 3} [I feel nothing.]
         It's almost like - it is hard to feel anything anymore. I feel disconnected from this world, not a part of it.
     ** [It is so strange.]
-* {nostalgia >= 4} [{I felt sad.|Still, I felt terribly sad.}] #AUDIO: Sounds/sad1.mp3
+* [{I felt sad.|Still, I felt terribly sad.}] #AUDIO: Sounds/sad1.mp3
     I felt a deep melancholy - abandonning what had become my new home, to find a broken world that was no longer mine.
     ** [My sisters-in-arms are dead.]
         {PlayerStates ? GoddessesAngry:Rest in Adnyenka's embrace, sisters - if she does not hate us all.|Rest in Adnyenka's embrace, sisters.}
@@ -116,9 +116,7 @@
             The only thing I know to do. Keep moving forward. Keep carving a path to the future.
             -> Parchment_Button (w_on) ->
             Even sad as I feel - I will not wait for my final breath lying down.
-* {PlayerStates ? Pious} [I thanked the goddesses.]
-    I thanked the goddesses. 
-- {-> feel_top|}
+- { -> feel_top |}
 + [{w_on}]
 
 - {We_I(2)} took a few steps on the clifftops. Everywhere, you could see the traces of the great skyflood.
@@ -132,36 +130,45 @@
 + [{w_on}]
 
 - I made my way to the humble cabin{outside_buildings:, now three stories tall|, now grotesquely stretched towards the sky}, from which I now write.
+-> Parchment_Button (w_on) ->
 
-* [I hope someone finds this.]
-    I hope someone, anyone finds this.
-    ** [I wanted to be heard.]
+I hope someone, anyone finds this.
+    * [I wanted to be heard.]
         -- (outside_wanted_heard) I think I needed to feel like someone, anyone might hear my story.
-    ** [I am terrified of being alone.]
+    * {childState !? Present} [I am terrified of being alone.]
         I am terrified of being the last of our kind. That we will be forgotten.
-        +++ [{w_on}]
-        Please remember us.
-    ** [I am not sure why.]
-        I am not sure why. It seems strange and pointless.
-* [We were the reason it happened.]
-    I believe we were the cause for the flood, and for the horrors that came from below.
-    ** [I am sure of it.]
-        Of this, I am quite certain, although I have no proofs.
-    ** [We must not forget our guilt.]
-        We must never forget our guilt, and strive to make amends with the world.
-    ** [The goddesses are angry.]
-        The goddesses are angry at our kind - and I will strive to earn their forgiveness.
-        +++ [{w_on}]
-        This was the first step.
-* [I needed to write this down.]
-    I know no one may find these scrolls. I might as well be the last of our kind.
-    ** [I am terrified.]
-        I am terrified that we will be forgotten. That everything ends with me.
-    ** [I wanted to be heard.] -> outside_wanted_heard
-    ** [I am not sure why.]
-        I think, after everything, I needed some form of closure.
-
+        ** [{w_on}]
+        Whoever reads this - please, remember us.
+    * {childState ? Present} [I am terrified of leaving Gwen alone.]
+        I am terrified of leaving Gwen alone. To burden her with finality - that she would be the last of our kind.
+        ** [{w_on}]
+        Whoever reads this - please, remember her.
+    * [I am not sure why.]
+        I am not sure why. It seems strange and pointless, right?
+        -> Parchment_Button (w_on) ->
+        Still, I think I found some sort of closure in telling my story - our story.
 -
+* [I needed to write this down.]
+    I know no one may find these scrolls. I know they might end up destroyed, scattered, lost. 
+    -> Parchment_Button (w_on) ->
+    I know the person finding it might not even speak the same tongue as I do.
+    -> Parchment_Button (w_on) ->
+    But this has been the story of an end. 
+    -> Parchment_Button (w_on) ->
+    The way we left the depths behind, and rose back to a world that - seventy years ago - had forsaken us.
+    ** {hope >= 3} [I wish you happiness.]  
+        I wish you happiness. {childState ? Present:I might still find some semblance of it, here - as I am not alone, and my companion is indeed very precious.}
+    ** [I wish you luck.]
+        I wish you luck. One can never have quite enough of it - and apparently, that of my people had run out.
+    ** {fierce >= 3} [I wish you purpose.]
+        I hope you will never feel empty or pointless. Not a moment in your life. As long as you breathe, as you keep moving forward: you are the link between present and future.
+        -> Parchment_Button (w_on) ->
+        Do not let fear, death or horror break your spirit.
+- For now - I must stop writing. {childState: I hear Gwen is calling my name, and} I must find something to eat. 
+-> Parchment_Button (w_on) ->
+Farewell, and Adnyenka bless us.
+
+-> Parchment_Button (end_on) ->
 
 -> END
 

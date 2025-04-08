@@ -37,6 +37,8 @@ VAR c_on_again = "Just a moment →"
 
 VAR dots_on = "... →"
 
+VAR end_on = "Put down the quill →"
+
 LIST Items = Trenchcoat, Rope, Pickaxe, FlintKnife
 LIST CharacterStates = NotFound, Absent, Present, Dead
 
