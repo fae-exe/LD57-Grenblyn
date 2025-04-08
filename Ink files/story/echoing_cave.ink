@@ -269,7 +269,7 @@ LIST ExitTypes = Good, Bad1, Bad2
       ~ return "ahead"
   } // on peut mettre de l'aléatoire entre les guillemets pour varier les choses
   
-  VAR distanceToExit = 4
+  VAR distanceToExit = 2
 
 === Picked_Good_Exit
 
