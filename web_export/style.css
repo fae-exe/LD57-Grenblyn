@@ -142,7 +142,7 @@ p {
     font-size: 22px;
     color: #441b08;
     line-height: 1.2em; 
-    font-family: sans-serif;
+    font-family: best-font;
 }
 
 a {
@@ -151,14 +151,14 @@ a {
     font-size: 20px;
     line-height: 1.2em;
     transition: color 0.6s;
-    font-family: sans-serif;
+    font-family: best-font;
     text-decoration: none;
 }
 
 .unclickable {
     font-weight: 600;
     color: #4f3411;
-    font-family: sans-serif;
+    font-family: best-font;
     text-decoration: none;
     cursor: not-allowed;
 }
@@ -297,11 +297,11 @@ img {
 }
 
 .dark p {
-    font-family: best-font;
+    font-family: sans-serif;
 }
 
 .dark a {
-    font-family: best-font;
+    font-family: sans-serif;
     font-size: 22px;
     color: #cc8f1a;
 }
@@ -311,6 +311,7 @@ img {
 }
 
 .dark .unclickable{
+    font: sans-serif;
     color: #c4af87;
     cursor:not-allowed;
 }
