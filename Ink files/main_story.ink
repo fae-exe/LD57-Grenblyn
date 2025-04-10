@@ -33,6 +33,7 @@ VAR debug = false
 
 An interactive fiction scroll, quilled by these alphabetical grenblyns: # CLASS: end
 alyyyd, fae.exe, Grizembrrr and Nuelijarma. # CLASS: end
+You can switch fonts at any time by clicking on "font" in the top right corner. Please try it! # CLASS: end
 
 -> Parchment_Button (start) ->
 # CLEAR
